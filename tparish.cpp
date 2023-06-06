@@ -1,8 +1,8 @@
 #include "tparish.h"
-#include <string>
-TParish::TParish()
-    : parishName("")
+
+TParish::TParish(std::string parishname)
 {
+    this ->parishName = parishname;
 }
 
 TParish::~TParish()
@@ -23,10 +23,19 @@ void TParish::addItem(const TShop& shopItem)
 
 void TParish::printPriests() const
 {
-    // Puste metody, aplikacja QT będzie obsługiwać wyświetlanie informacji w inny sposób
+    // Wypisanie księży
 }
 
 void TParish::printItems() const
 {
-    // Puste metody, aplikacja QT będzie obsługiwać wyświetlanie informacji w inny sposób
+    // Wypisanie przedmiotów
+}
+
+int TParish::getFaithful() const
+{
+    int totalFaithful = 0;
+    // Przeiterowanie przez wszystkich wiernych i zsumowanie ich liczby
+    // ...
+
+    return totalFaithful;
 }

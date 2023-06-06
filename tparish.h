@@ -2,7 +2,6 @@
 #define TPARISH_H
 
 #include "tpriest.h"
-#include "tdiocese.h"
 #include "tshop.h"
 #include <iostream>
 #include <string>
@@ -11,12 +10,13 @@
 class TParish
 {
 public:
-    TParish();
+    TParish(std::string parishname);
     ~TParish();
     void addPriest(const std::string& firstName, const std::string& lastName, const std::string& position);
     void addItem(const TShop& shopItem);
     void printPriests() const;
     void printItems() const;
+    int getFaithful() const;
 
 protected:
 

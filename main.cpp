@@ -22,8 +22,6 @@ int main(int argc, char *argv[])
         }
     }
 
-    TDiocese D1("St Pius X", 29000,1,0,10000);
-
     MainWindow w;
     w.show();
     return a.exec();
