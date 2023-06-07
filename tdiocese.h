@@ -1,24 +1,26 @@
-#ifndef TDIOCESE_H
-#define TDIOCESE_H
-#include<iostream>
-#include<string>
+#ifndef TDI0CESE_H
+#define TDI0CESE_H
+#include "tparish.h"
+#include <iostream>
+#include <string>
 
 class TDiocese
 {
 public:
-    TDiocese(std::string DioceseName, int faithfuls, int parishesAmount, int priestsAmount, float moneyAmount);
-
-
-protected:
+    TDiocese(const std::string& name);
+    ~TDiocese();
+    void addParish(const std::string& parishName);
+    void addFaithful(int numFaithful);
+    int getTotalFaithful() const;
+    std::string getDioceseName() const;
 
 private:
-    std::string DioceseName;
-    int faithfuls;
-    int parishesAmount;
-    int prietsAmount;
-    float moneyAmount;
-
-
+    std::string dioceseName; // Nazwa diecezji
+    TParish** parishes; // Tablica wskaźników na parafie
+    int numParishes; // Liczba parafii
+    int capacity; // Pojemność tablicy
+    int faithfulls;
+    void resizeParishes(); // Funkcja do zwiększania pojemności tablicy parafii, gdy jest pełna
 };
 
-#endif // TDIOCESE_H
+#endif // TDI0CESE_H
