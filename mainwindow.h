@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 #include <QMainWindow>
 #include "tdiocese.h"
+#include "newwindow.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -24,5 +25,6 @@ private slots:
 private:
     Ui::MainWindow *ui;
     TDiocese* m_diocese;
+    NewWindow newWindow;
 };
 #endif // MAINWINDOW_H

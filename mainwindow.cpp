@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "tdiocese.h"
+#include "newwindow.h"
 #include <QPixmap>
 #include <string>
 
@@ -36,6 +37,6 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_buttonBegin_clicked()
 {
-
+    newWindow.show();
 }
 
