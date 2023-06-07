@@ -4,17 +4,18 @@
 #include <iostream>
 #include <string>
 
-
 class TDiocese
 {
 public:
-    TDiocese();
+    TDiocese(const std::string& name);
     ~TDiocese();
     void addParish(const std::string& parishName);
     void addFaithful(int numFaithful);
     int getTotalFaithful() const;
+    std::string getDioceseName() const;
 
 private:
+    std::string dioceseName; // Nazwa diecezji
     TParish** parishes; // Tablica wskaźników na parafie
     int numParishes; // Liczba parafii
     int capacity; // Pojemność tablicy

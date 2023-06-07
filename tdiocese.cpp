@@ -1,11 +1,14 @@
 #include "tdiocese.h"
 #include <string>
 
-TDiocese::TDiocese()
-    : parishes(nullptr), numParishes(0), capacity(0)
+TDiocese::TDiocese(const std::string& name)
+    : dioceseName(name), parishes(nullptr), numParishes(0), capacity(0), faithfulls(0)
 {
 }
-
+std::string TDiocese::getDioceseName() const
+{
+    return dioceseName;
+}
 TDiocese::~TDiocese()
 {
     // Zwolnienie pamięci przy usuwaniu obiektu TDiocese

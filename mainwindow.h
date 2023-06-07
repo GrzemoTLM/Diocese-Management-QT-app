@@ -1,7 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-
 #include <QMainWindow>
+#include "tdiocese.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -13,12 +13,16 @@ class MainWindow : public QMainWindow
 
 public:
     MainWindow(QWidget *parent = nullptr);
+    void setDiocese(TDiocese* diocese);
     ~MainWindow();
 
 private slots:
 
 
+    void on_buttonBegin_clicked();
+
 private:
     Ui::MainWindow *ui;
+    TDiocese* m_diocese;
 };
 #endif // MAINWINDOW_H

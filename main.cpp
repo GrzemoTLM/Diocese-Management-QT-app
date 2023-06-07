@@ -7,9 +7,12 @@
 #include <QLocale>
 #include <QTranslator>
 #include <QString>
+#include <string>
 
 int main(int argc, char *argv[])
 {
+    std::string dioceseName("Diocese of Saint Doggi X");
+    TDiocese diocese(dioceseName);
     QApplication a(argc, argv);
 
     QTranslator translator;
@@ -21,8 +24,10 @@ int main(int argc, char *argv[])
             break;
         }
     }
+// ------------------------------------------------------------
 
     MainWindow w;
+    w.setDiocese(&diocese);
     w.show();
     return a.exec();
 }
