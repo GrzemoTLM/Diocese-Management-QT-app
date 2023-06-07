@@ -15,6 +15,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QRadioButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 
@@ -30,6 +31,7 @@ public:
     QPushButton *buttonBegin;
     QPushButton *buttonStats;
     QPushButton *buttonCredits;
+    QRadioButton *radioButton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -60,6 +62,9 @@ public:
         buttonCredits = new QPushButton(centralwidget);
         buttonCredits->setObjectName("buttonCredits");
         buttonCredits->setGeometry(QRect(660, 490, 161, 41));
+        radioButton = new QRadioButton(centralwidget);
+        radioButton->setObjectName("radioButton");
+        radioButton->setGeometry(QRect(20, 540, 131, 25));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -83,6 +88,7 @@ public:
         buttonBegin->setText(QCoreApplication::translate("MainWindow", "Begin", nullptr));
         buttonStats->setText(QCoreApplication::translate("MainWindow", "Statistics", nullptr));
         buttonCredits->setText(QCoreApplication::translate("MainWindow", "Credits", nullptr));
+        radioButton->setText(QCoreApplication::translate("MainWindow", "Gregorian Chant", nullptr));
     } // retranslateUi
 
 };
