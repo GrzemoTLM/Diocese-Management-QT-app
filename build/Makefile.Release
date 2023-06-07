@@ -72,7 +72,7 @@ OBJECTS       = release/main.o \
 		release/moc_mainwindow.o \
 		release/moc_newwindow.o
 
-DIST          =  ..\mainwindow.h \
+DIST          = items.txt ..\mainwindow.h \
 		..\newwindow.h \
 		..\tdiocese.h \
 		..\tparish.h \
@@ -134,7 +134,10 @@ compiler_rcc_clean:
 	-$(DEL_FILE) release\qrc_Pictures.cpp release\qrc_qmake_qmake_qm_files.cpp
 release/qrc_Pictures.cpp: ../Pictures.qrc \
 		S:/qtcr/6.5.1/mingw_64/bin/rcc.exe \
-		../pictrues/Piesel.jpg
+		../pictrues/Piesel.jpg \
+		../pictrues/shoplogo.png \
+		../pictrues/Church1.png \
+		../pictrues/Church2.png
 	S:\qtcr\6.5.1\mingw_64\bin\rcc.exe -name Pictures --no-zstd ..\Pictures.qrc -o release\qrc_Pictures.cpp
 
 release/qrc_qmake_qmake_qm_files.cpp: release/qmake_qmake_qm_files.qrc \
@@ -315,11 +318,13 @@ release/moc_mainwindow.cpp: ../mainwindow.h \
 		../tparish.h \
 		../tpriest.h \
 		../tshop.h \
+		../newwindow.h \
 		release/moc_predefs.h \
 		S:/qtcr/6.5.1/mingw_64/bin/moc.exe
 	S:\qtcr\6.5.1\mingw_64\bin\moc.exe $(DEFINES) --include "D:/moje dokumenty/GitHub/Diocese-Management-QT-app/build/release/moc_predefs.h" -IS:/qtcr/6.5.1/mingw_64/mkspecs/win32-g++ -I"D:/moje dokumenty/GitHub/Diocese-Management-QT-app" -IS:/qtcr/6.5.1/mingw_64/include -IS:/qtcr/6.5.1/mingw_64/include/QtQuick -IS:/qtcr/6.5.1/mingw_64/include/QtOpenGL -IS:/qtcr/6.5.1/mingw_64/include/QtWidgets -IS:/qtcr/6.5.1/mingw_64/include/QtGui -IS:/qtcr/6.5.1/mingw_64/include/QtQmlModels -IS:/qtcr/6.5.1/mingw_64/include/QtQml -IS:/qtcr/6.5.1/mingw_64/include/QtQmlIntegration -IS:/qtcr/6.5.1/mingw_64/include/QtNetwork -IS:/qtcr/6.5.1/mingw_64/include/QtCore -I. -IS:/qtcr/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IS:/qtcr/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IS:/qtcr/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IS:/qtcr/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IS:/qtcr/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IS:/qtcr/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\mainwindow.h -o release\moc_mainwindow.cpp
 
 release/moc_newwindow.cpp: ../newwindow.h \
+		../tshop.h \
 		S:/qtcr/6.5.1/mingw_64/include/QtWidgets/QMainWindow \
 		S:/qtcr/6.5.1/mingw_64/include/QtWidgets/qmainwindow.h \
 		S:/qtcr/6.5.1/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -674,6 +679,7 @@ release/main.o: ../main.cpp ../mainwindow.h \
 		../tparish.h \
 		../tpriest.h \
 		../tshop.h \
+		../newwindow.h \
 		S:/qtcr/6.5.1/mingw_64/include/QtWidgets/QApplication \
 		S:/qtcr/6.5.1/mingw_64/include/QtWidgets/qapplication.h \
 		S:/qtcr/6.5.1/mingw_64/include/QtCore/qcoreapplication.h \
@@ -866,6 +872,7 @@ release/mainwindow.o: ../mainwindow.cpp ../mainwindow.h \
 		../tparish.h \
 		../tpriest.h \
 		../tshop.h \
+		../newwindow.h \
 		ui_mainwindow.h \
 		S:/qtcr/6.5.1/mingw_64/include/QtCore/QVariant \
 		S:/qtcr/6.5.1/mingw_64/include/QtWidgets/QApplication \
@@ -906,11 +913,11 @@ release/mainwindow.o: ../mainwindow.cpp ../mainwindow.h \
 		S:/qtcr/6.5.1/mingw_64/include/QtWidgets/QStatusBar \
 		S:/qtcr/6.5.1/mingw_64/include/QtWidgets/qstatusbar.h \
 		S:/qtcr/6.5.1/mingw_64/include/QtWidgets/QWidget \
-		../newwindow.h \
 		S:/qtcr/6.5.1/mingw_64/include/QtGui/QPixmap
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwindow.o ..\mainwindow.cpp
 
 release/newwindow.o: ../newwindow.cpp ../newwindow.h \
+		../tshop.h \
 		S:/qtcr/6.5.1/mingw_64/include/QtWidgets/QMainWindow \
 		S:/qtcr/6.5.1/mingw_64/include/QtWidgets/qmainwindow.h \
 		S:/qtcr/6.5.1/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -1070,7 +1077,70 @@ release/newwindow.o: ../newwindow.cpp ../newwindow.h \
 		S:/qtcr/6.5.1/mingw_64/include/QtGui/QTransform \
 		S:/qtcr/6.5.1/mingw_64/include/QtCore/qnativeinterface.h \
 		S:/qtcr/6.5.1/mingw_64/include/QtWidgets/qtabwidget.h \
-		ui_newwindow.h
+		ui_newwindow.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtCore/QVariant \
+		S:/qtcr/6.5.1/mingw_64/include/QtGui/QAction \
+		S:/qtcr/6.5.1/mingw_64/include/QtWidgets/QApplication \
+		S:/qtcr/6.5.1/mingw_64/include/QtWidgets/qapplication.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtCore/qcoreapplication.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtCore/qeventloop.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtCore/qcoreapplication_platform.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtCore/qfuture.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtCore/qfutureinterface.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtCore/qmutex.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtCore/qtsan_impl.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtCore/qresultstore.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtCore/qfuture_impl.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtCore/qthreadpool.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtCore/qthread.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtCore/qdeadlinetimer.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtCore/qelapsedtimer.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtCore/qrunnable.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtCore/qexception.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtCore/qpromise.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtGui/qguiapplication.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtGui/qinputmethod.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtCore/qlocale.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtGui/qguiapplication_platform.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtWidgets/QComboBox \
+		S:/qtcr/6.5.1/mingw_64/include/QtWidgets/qcombobox.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtWidgets/qstyleoption.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtGui/qvalidator.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtCore/qregularexpression.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtWidgets/qslider.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtWidgets/qabstractslider.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtWidgets/qstyle.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtWidgets/qtabbar.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtWidgets/qrubberband.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtWidgets/qframe.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtCore/qabstractitemmodel.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtWidgets/QLabel \
+		S:/qtcr/6.5.1/mingw_64/include/QtWidgets/qlabel.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtGui/qpicture.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtGui/qtextdocument.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtWidgets/QListView \
+		S:/qtcr/6.5.1/mingw_64/include/QtWidgets/qlistview.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtWidgets/qabstractitemview.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtCore/qitemselectionmodel.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtWidgets/QMenuBar \
+		S:/qtcr/6.5.1/mingw_64/include/QtWidgets/qmenubar.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtWidgets/qmenu.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtWidgets/QPushButton \
+		S:/qtcr/6.5.1/mingw_64/include/QtWidgets/qpushbutton.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtWidgets/qabstractbutton.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtWidgets/QStatusBar \
+		S:/qtcr/6.5.1/mingw_64/include/QtWidgets/qstatusbar.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtWidgets/QWidget \
+		S:/qtcr/6.5.1/mingw_64/include/QtGui/QPixmap \
+		S:/qtcr/6.5.1/mingw_64/include/QtGui/QPalette \
+		S:/qtcr/6.5.1/mingw_64/include/QtCore/QString \
+		S:/qtcr/6.5.1/mingw_64/include/QtCore/QFile \
+		S:/qtcr/6.5.1/mingw_64/include/QtCore/qfile.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtCore/qfiledevice.h \
+		S:/qtcr/6.5.1/mingw_64/include/QtCore/QTextStream
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\newwindow.o ..\newwindow.cpp
 
 release/tdiocese.o: ../tdiocese.cpp ../tdiocese.h \

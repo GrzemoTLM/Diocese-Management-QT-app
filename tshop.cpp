@@ -2,7 +2,7 @@
 #include <string>
 
 TShop::TShop()
-    : itemName(""), itemCost(0.0)
+    : itemName("xd"), itemCost(0.0)
 {
 }
 

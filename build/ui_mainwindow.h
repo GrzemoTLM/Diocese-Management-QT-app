@@ -64,7 +64,7 @@ public:
         buttonCredits->setGeometry(QRect(660, 490, 161, 41));
         radioButton = new QRadioButton(centralwidget);
         radioButton->setObjectName("radioButton");
-        radioButton->setGeometry(QRect(20, 540, 131, 25));
+        radioButton->setGeometry(QRect(60, 540, 141, 31));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");

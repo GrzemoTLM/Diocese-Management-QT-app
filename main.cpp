@@ -26,6 +26,7 @@ int main(int argc, char *argv[])
     }
 // ------------------------------------------------------------
 
+
     MainWindow w;
     w.setDiocese(&diocese);
     w.show();

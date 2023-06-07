@@ -1,5 +1,8 @@
 <RCC>
     <qresource prefix="/new/prefix1">
         <file>pictrues/Piesel.jpg</file>
+        <file>pictrues/shoplogo.png</file>
+        <file>pictrues/Church1.png</file>
+        <file>pictrues/Church2.png</file>
     </qresource>
 </RCC>

@@ -29,7 +29,6 @@ public:
     QAction *actionDodaj_Parafie;
     QWidget *centralwidget;
     QLabel *LabelComboBox;
-    QComboBox *comboBox;
     QListView *listView;
     QLabel *LabelPriests;
     QPushButton *ButtonAddPriest;
@@ -41,9 +40,11 @@ public:
     QLabel *label;
     QLabel *LabelBudget;
     QLabel *LabelShop;
-    QComboBox *comboBox_2;
     QPushButton *ButtonBuy;
     QLabel *LabelMoney;
+    QLabel *LabelShopPic;
+    QLabel *label_2;
+    QComboBox *comboBoxShop;
     QStatusBar *statusbar;
     QMenuBar *menuBar;
 
@@ -51,7 +52,7 @@ public:
     {
         if (NewWindow->objectName().isEmpty())
             NewWindow->setObjectName("NewWindow");
-        NewWindow->resize(950, 744);
+        NewWindow->resize(936, 720);
         actionDodaj_Parafie = new QAction(NewWindow);
         actionDodaj_Parafie->setObjectName("actionDodaj_Parafie");
         centralwidget = new QWidget(NewWindow);
@@ -59,9 +60,6 @@ public:
         LabelComboBox = new QLabel(centralwidget);
         LabelComboBox->setObjectName("LabelComboBox");
         LabelComboBox->setGeometry(QRect(110, 20, 251, 41));
-        comboBox = new QComboBox(centralwidget);
-        comboBox->setObjectName("comboBox");
-        comboBox->setGeometry(QRect(390, 30, 191, 27));
         listView = new QListView(centralwidget);
         listView->setObjectName("listView");
         listView->setGeometry(QRect(20, 290, 351, 291));
@@ -85,32 +83,38 @@ public:
         LabelParishName->setGeometry(QRect(210, 120, 141, 19));
         LabelEQ = new QLabel(centralwidget);
         LabelEQ->setObjectName("LabelEQ");
-        LabelEQ->setGeometry(QRect(500, 350, 56, 19));
+        LabelEQ->setGeometry(QRect(450, 340, 161, 31));
         label = new QLabel(centralwidget);
         label->setObjectName("label");
         label->setGeometry(QRect(620, 60, 291, 241));
         LabelBudget = new QLabel(centralwidget);
         LabelBudget->setObjectName("LabelBudget");
-        LabelBudget->setGeometry(QRect(660, 610, 91, 41));
+        LabelBudget->setGeometry(QRect(660, 580, 91, 41));
         LabelShop = new QLabel(centralwidget);
         LabelShop->setObjectName("LabelShop");
-        LabelShop->setGeometry(QRect(720, 320, 151, 51));
-        comboBox_2 = new QComboBox(centralwidget);
-        comboBox_2->setObjectName("comboBox_2");
-        comboBox_2->setGeometry(QRect(670, 390, 261, 27));
+        LabelShop->setGeometry(QRect(660, 320, 181, 51));
         ButtonBuy = new QPushButton(centralwidget);
         ButtonBuy->setObjectName("ButtonBuy");
-        ButtonBuy->setGeometry(QRect(750, 550, 80, 27));
+        ButtonBuy->setGeometry(QRect(760, 420, 80, 27));
         LabelMoney = new QLabel(centralwidget);
         LabelMoney->setObjectName("LabelMoney");
-        LabelMoney->setGeometry(QRect(780, 620, 56, 19));
+        LabelMoney->setGeometry(QRect(820, 590, 56, 19));
+        LabelShopPic = new QLabel(centralwidget);
+        LabelShopPic->setObjectName("LabelShopPic");
+        LabelShopPic->setGeometry(QRect(830, 280, 101, 101));
+        label_2 = new QLabel(centralwidget);
+        label_2->setObjectName("label_2");
+        label_2->setGeometry(QRect(610, 250, 56, 19));
+        comboBoxShop = new QComboBox(centralwidget);
+        comboBoxShop->setObjectName("comboBoxShop");
+        comboBoxShop->setGeometry(QRect(680, 390, 241, 27));
         NewWindow->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(NewWindow);
         statusbar->setObjectName("statusbar");
         NewWindow->setStatusBar(statusbar);
         menuBar = new QMenuBar(NewWindow);
         menuBar->setObjectName("menuBar");
-        menuBar->setGeometry(QRect(0, 0, 950, 24));
+        menuBar->setGeometry(QRect(0, 0, 936, 24));
         NewWindow->setMenuBar(menuBar);
 
         retranslateUi(NewWindow);
@@ -134,6 +138,8 @@ public:
         LabelShop->setText(QCoreApplication::translate("NewWindow", "TextLabel", nullptr));
         ButtonBuy->setText(QCoreApplication::translate("NewWindow", "BUY", nullptr));
         LabelMoney->setText(QCoreApplication::translate("NewWindow", "$", nullptr));
+        LabelShopPic->setText(QCoreApplication::translate("NewWindow", "TextLabel", nullptr));
+        label_2->setText(QCoreApplication::translate("NewWindow", "TextLabel", nullptr));
     } // retranslateUi
 
 };
