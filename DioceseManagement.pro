@@ -12,6 +12,7 @@ CONFIG += c++17
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
+    newwindow.cpp \
     tdiocese.cpp \
     tparish.cpp \
     tpriest.cpp \
@@ -19,13 +20,15 @@ SOURCES += \
 
 HEADERS += \
     mainwindow.h \
+    newwindow.h \
     tdiocese.h \
     tparish.h \
     tpriest.h \
     tshop.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    newwindow.ui
 
 TRANSLATIONS += \
     DioceseManagement_pl_PL.ts
@@ -39,3 +42,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     Pictures.qrc
+
+DISTFILES += \
+    items.txt

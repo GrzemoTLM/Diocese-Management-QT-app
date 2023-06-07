@@ -1,0 +1,11 @@
+release/main.o
+release/mainwindow.o
+release/newwindow.o
+release/tdiocese.o
+release/tparish.o
+release/tpriest.o
+release/tshop.o
+release/qrc_Pictures.o
+release/qrc_qmake_qmake_qm_files.o
+release/moc_mainwindow.o
+release/moc_newwindow.o
