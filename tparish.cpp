@@ -1,8 +1,9 @@
 #include "tparish.h"
 
-TParish::TParish(std::string parishname)
+TParish::TParish(std::string parishname, int am)
 {
     this ->parishName = parishname;
+    this ->faithful = am;
 }
 
 TParish::~TParish()

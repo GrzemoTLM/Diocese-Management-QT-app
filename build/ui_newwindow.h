@@ -45,6 +45,7 @@ public:
     QLabel *LabelShopPic;
     QLabel *label_2;
     QComboBox *comboBoxShop;
+    QComboBox *comboBoxParish;
     QStatusBar *statusbar;
     QMenuBar *menuBar;
 
@@ -108,13 +109,16 @@ public:
         comboBoxShop = new QComboBox(centralwidget);
         comboBoxShop->setObjectName("comboBoxShop");
         comboBoxShop->setGeometry(QRect(680, 390, 241, 27));
+        comboBoxParish = new QComboBox(centralwidget);
+        comboBoxParish->setObjectName("comboBoxParish");
+        comboBoxParish->setGeometry(QRect(410, 30, 281, 24));
         NewWindow->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(NewWindow);
         statusbar->setObjectName("statusbar");
         NewWindow->setStatusBar(statusbar);
         menuBar = new QMenuBar(NewWindow);
         menuBar->setObjectName("menuBar");
-        menuBar->setGeometry(QRect(0, 0, 936, 24));
+        menuBar->setGeometry(QRect(0, 0, 936, 21));
         NewWindow->setMenuBar(menuBar);
 
         retranslateUi(NewWindow);

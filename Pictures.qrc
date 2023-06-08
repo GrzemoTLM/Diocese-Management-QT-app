@@ -5,4 +5,7 @@
         <file>pictrues/Church1.png</file>
         <file>pictrues/Church2.png</file>
     </qresource>
+    <qresource prefix="/new/prefix2">
+        <file>items.csv</file>
+    </qresource>
 </RCC>

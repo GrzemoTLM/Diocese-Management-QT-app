@@ -1,7 +1,7 @@
 #include "newwindow.h"
-#include "qstandarditemmodel.h"
 #include "ui_newwindow.h"
 #include "tshop.h"
+#include "tparish.h"
 #include <QPixmap>
 #include <QPalette>
 #include <QString>
@@ -19,18 +19,26 @@ NewWindow::NewWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-        shopItems = {
-        TShop("Organy barokowe", 5000.0),
-        TShop("Organy współczesne", 10000.0),
-        TShop("Zestaw ornatów rzymskich", 2000.0),
-        TShop("Zestaw ornatów gotyckich", 1800.0),
-        TShop("Lniana bielizna kielichowa", 500.0),
-        TShop("Dębowe ławki", 1500.0),
-        TShop("Cedrowe konfesjonały", 2500.0),
-        TShop("Kryształowy żyrandol", 3000.0),
-        TShop("Nowy zestaw ksiąg liturgicznych", 4000.0),
-        TShop("Mszał z roku 1922", 1000.0)
-    };
+    QVector<TShop> shopItems;
+    QFile file(":/new/prefix2/items.csv");
+    if(file.open(QIODevice::ReadOnly|QIODevice::Text))
+    {
+        QTextStream in(&file);
+        while(!in.atEnd())
+        {
+            QString line = in.readLine();
+            QStringList parts = line.split(",");
+            if(parts.size()==2)
+            {
+                QString itemName = parts[0].trimmed();
+                double itemCost = parts[1].trimmed().toDouble();
+                TShop item(itemName.toStdString(), itemCost);
+                shopItems.push_back(item);
+            }
+        }
+        file.close();
+    }
+
 
     // Dodawanie obiektów TShop do ComboBoxShop
     for (const TShop& item : shopItems) {
@@ -41,6 +49,7 @@ NewWindow::NewWindow(QWidget *parent) :
         QString itemText = QString("%1 (%2 zł)").arg(itemName).arg(itemCost);
         ui->comboBoxShop->addItem(itemText);
     }
+
 
 
     ui->LabelComboBox->setText("Choose parish to manage");

@@ -26,7 +26,7 @@ void TDiocese::addParish(const std::string& parishName)
         resizeParishes();
     }
 
-    TParish* parish = new TParish(parishName);
+    TParish* parish = new TParish(parishName,faithfulls);
     parishes[numParishes] = parish;
     numParishes++;
 }
