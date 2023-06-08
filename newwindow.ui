@@ -226,6 +226,16 @@
      </rect>
     </property>
    </widget>
+   <widget class="QComboBox" name="comboBoxParish">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>30</y>
+      <width>281</width>
+      <height>24</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <widget class="QMenuBar" name="menuBar">
@@ -234,7 +244,7 @@
      <x>0</x>
      <y>0</y>
      <width>936</width>
-     <height>24</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

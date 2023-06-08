@@ -44,4 +44,4 @@ RESOURCES += \
     Pictures.qrc
 
 DISTFILES += \
-    items.txt
+    items.csv

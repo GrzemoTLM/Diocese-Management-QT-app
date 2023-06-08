@@ -18,7 +18,7 @@ public:
 
 private:
     Ui::NewWindow *ui;
-    std::vector<TShop> shopItems;
+
 };
 
 #endif // NEWWINDOW_H
