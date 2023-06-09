@@ -11,13 +11,13 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
+
 {
     ui->setupUi(this);
     ui->welcomelabel->setText("Laudetur Iesus Christus!");
     ui->welcomelabel->setStyleSheet("font-size: 48px; font-family: Impact;");
     QPixmap obrazek1(":/new/prefix1/pictrues/Piesel.jpg");
     ui->welcomelabel2->setPixmap(obrazek1.scaled(ui->welcomelabel2->size(),Qt::KeepAspectRatio, Qt::SmoothTransformation));
-
 }
 void MainWindow::setDiocese(TDiocese* diocese)
 {
@@ -35,11 +35,8 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
 void MainWindow::on_buttonBegin_clicked()
 {
-
-    NewWindow nwindow(this);
-    newWindow.show();
+   newWindow.show();
 }
 

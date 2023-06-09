@@ -7,5 +7,6 @@
     </qresource>
     <qresource prefix="/new/prefix2">
         <file>items.csv</file>
+        <file>parishes.txt</file>
     </qresource>
 </RCC>

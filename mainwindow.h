@@ -15,6 +15,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     void setDiocese(TDiocese* diocese);
+    NewWindow newWindow;
     ~MainWindow();
 
 private slots:
@@ -25,6 +26,6 @@ private slots:
 private:
     Ui::MainWindow *ui;
     TDiocese* m_diocese;
-    NewWindow newWindow;
+
 };
 #endif // MAINWINDOW_H
