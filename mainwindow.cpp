@@ -35,8 +35,11 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+
 void MainWindow::on_buttonBegin_clicked()
 {
-   newWindow.show();
+
+    NewWindow nwindow(this);
+    newWindow.show();
 }
 

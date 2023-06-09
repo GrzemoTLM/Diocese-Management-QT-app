@@ -11,7 +11,6 @@
 #include <QStandardItemModel>
 
 
-
 NewWindow::NewWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::NewWindow)
@@ -19,6 +18,7 @@ NewWindow::NewWindow(QWidget *parent) :
 
 {
     ui->setupUi(this);
+
     QVector<TShop> shopItems;
     QFile file(":/new/prefix2/items.csv");
     if(file.open(QIODevice::ReadOnly|QIODevice::Text))
@@ -48,12 +48,8 @@ NewWindow::NewWindow(QWidget *parent) :
         // Tworzenie formatowanego tekstu z ceną na zielono
         QString itemText = QString("%1 (%2 zł)").arg(itemName).arg(itemCost);
         ui->comboBoxShop->addItem(itemText);
-        }
-//    //Dodawanie obiektów Tparish do ComboBoxParish
-//    for (const TParish& parish : m_diocese->parishes) {
-//        QString parishName = QString::fromStdString(parish.getParishName());
-//        ui->comboBoxParish->addItem(parishName);
-//    }
+    }
+
 
 
     ui->LabelComboBox->setText("Choose parish to manage");
@@ -69,10 +65,7 @@ NewWindow::NewWindow(QWidget *parent) :
     QPixmap obrazek2(":/new/prefix1/pictrues/shoplogo.png");
     ui->LabelShopPic->setPixmap(obrazek2.scaled(ui->LabelShopPic->size(),Qt::KeepAspectRatio,Qt::SmoothTransformation));
 }
-void NewWindow::setDiocese(TDiocese* diocese)
-{
-    m_diocese = diocese; // Ustawienie wskaźnika na obiekt TDiocese
-}
+
 NewWindow::~NewWindow()
 {
     delete ui;

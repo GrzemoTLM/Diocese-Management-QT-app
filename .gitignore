@@ -66,6 +66,6 @@
 # Flags for Clang Code Model
 *.cxxflags
 *.cflags
-
+*.idx
 
 # End of https://www.toptal.com/developers/gitignore/api/c++,qtcreator
