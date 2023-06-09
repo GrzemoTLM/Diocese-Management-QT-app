@@ -135,6 +135,7 @@ compiler_rcc_clean:
 debug/qrc_Pictures.cpp: ../Pictures.qrc \
 		C:/Qt/6.5.1/mingw_64/bin/rcc.exe \
 		../items.csv \
+		../parishes.txt \
 		../pictrues/Piesel.jpg \
 		../pictrues/shoplogo.png \
 		../pictrues/Church1.png \
@@ -319,6 +320,13 @@ debug/moc_mainwindow.cpp: ../mainwindow.h \
 		../tparish.h \
 		../tpriest.h \
 		../tshop.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/QString \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/QFile \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qfile.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qfiledevice.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/QVector \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qvector.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/QTextStream \
 		../newwindow.h \
 		debug/moc_predefs.h \
 		C:/Qt/6.5.1/mingw_64/bin/moc.exe
@@ -485,6 +493,16 @@ debug/moc_newwindow.cpp: ../newwindow.h \
 		C:/Qt/6.5.1/mingw_64/include/QtGui/QTransform \
 		C:/Qt/6.5.1/mingw_64/include/QtCore/qnativeinterface.h \
 		C:/Qt/6.5.1/mingw_64/include/QtWidgets/qtabwidget.h \
+		../tdiocese.h \
+		../tparish.h \
+		../tpriest.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/QString \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/QFile \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qfile.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qfiledevice.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/QVector \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qvector.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/QTextStream \
 		debug/moc_predefs.h \
 		C:/Qt/6.5.1/mingw_64/bin/moc.exe
 	C:\Qt\6.5.1\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/Grzegorz/Documents/GitHub/Diocese-Management-QT-app/build/debug/moc_predefs.h -IC:/Qt/6.5.1/mingw_64/mkspecs/win32-g++ -IC:/Users/Grzegorz/Documents/GitHub/Diocese-Management-QT-app -IC:/Qt/6.5.1/mingw_64/include -IC:/Qt/6.5.1/mingw_64/include/QtQuick -IC:/Qt/6.5.1/mingw_64/include/QtOpenGL -IC:/Qt/6.5.1/mingw_64/include/QtWidgets -IC:/Qt/6.5.1/mingw_64/include/QtGui -IC:/Qt/6.5.1/mingw_64/include/QtQmlModels -IC:/Qt/6.5.1/mingw_64/include/QtQml -IC:/Qt/6.5.1/mingw_64/include/QtQmlIntegration -IC:/Qt/6.5.1/mingw_64/include/QtNetwork -IC:/Qt/6.5.1/mingw_64/include/QtCore -I. -IS:/qtcr/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IS:/qtcr/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IS:/qtcr/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IS:/qtcr/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IS:/qtcr/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IS:/qtcr/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\newwindow.h -o debug\moc_newwindow.cpp
@@ -680,6 +698,13 @@ debug/main.o: ../main.cpp ../mainwindow.h \
 		../tparish.h \
 		../tpriest.h \
 		../tshop.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/QString \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/QFile \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qfile.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qfiledevice.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/QVector \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qvector.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/QTextStream \
 		../newwindow.h \
 		C:/Qt/6.5.1/mingw_64/include/QtWidgets/QApplication \
 		C:/Qt/6.5.1/mingw_64/include/QtWidgets/qapplication.h \
@@ -706,7 +731,7 @@ debug/main.o: ../main.cpp ../mainwindow.h \
 		C:/Qt/6.5.1/mingw_64/include/QtCore/QLocale \
 		C:/Qt/6.5.1/mingw_64/include/QtCore/QTranslator \
 		C:/Qt/6.5.1/mingw_64/include/QtCore/qtranslator.h \
-		C:/Qt/6.5.1/mingw_64/include/QtCore/QString
+		C:/Qt/6.5.1/mingw_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\main.o ..\main.cpp
 
 debug/mainwindow.o: ../mainwindow.cpp ../mainwindow.h \
@@ -873,8 +898,15 @@ debug/mainwindow.o: ../mainwindow.cpp ../mainwindow.h \
 		../tparish.h \
 		../tpriest.h \
 		../tshop.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/QString \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/QFile \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qfile.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qfiledevice.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/QVector \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qvector.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/QTextStream \
 		../newwindow.h \
-		ui_mainwindow.h \
+		../ui_mainwindow.h \
 		C:/Qt/6.5.1/mingw_64/include/QtCore/QVariant \
 		C:/Qt/6.5.1/mingw_64/include/QtWidgets/QApplication \
 		C:/Qt/6.5.1/mingw_64/include/QtWidgets/qapplication.h \
@@ -1078,7 +1110,17 @@ debug/newwindow.o: ../newwindow.cpp ../newwindow.h \
 		C:/Qt/6.5.1/mingw_64/include/QtGui/QTransform \
 		C:/Qt/6.5.1/mingw_64/include/QtCore/qnativeinterface.h \
 		C:/Qt/6.5.1/mingw_64/include/QtWidgets/qtabwidget.h \
-		ui_newwindow.h \
+		../tdiocese.h \
+		../tparish.h \
+		../tpriest.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/QString \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/QFile \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qfile.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qfiledevice.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/QVector \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qvector.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/QTextStream \
+		../ui_newwindow.h \
 		C:/Qt/6.5.1/mingw_64/include/QtCore/QVariant \
 		C:/Qt/6.5.1/mingw_64/include/QtGui/QAction \
 		C:/Qt/6.5.1/mingw_64/include/QtWidgets/QApplication \
@@ -1135,15 +1177,8 @@ debug/newwindow.o: ../newwindow.cpp ../newwindow.h \
 		C:/Qt/6.5.1/mingw_64/include/QtWidgets/QStatusBar \
 		C:/Qt/6.5.1/mingw_64/include/QtWidgets/qstatusbar.h \
 		C:/Qt/6.5.1/mingw_64/include/QtWidgets/QWidget \
-		../tparish.h \
-		../tpriest.h \
 		C:/Qt/6.5.1/mingw_64/include/QtGui/QPixmap \
 		C:/Qt/6.5.1/mingw_64/include/QtGui/QPalette \
-		C:/Qt/6.5.1/mingw_64/include/QtCore/QString \
-		C:/Qt/6.5.1/mingw_64/include/QtCore/QFile \
-		C:/Qt/6.5.1/mingw_64/include/QtCore/qfile.h \
-		C:/Qt/6.5.1/mingw_64/include/QtCore/qfiledevice.h \
-		C:/Qt/6.5.1/mingw_64/include/QtCore/QTextStream \
 		C:/Qt/6.5.1/mingw_64/include/QtCore/QStringList \
 		C:/Qt/6.5.1/mingw_64/include/QtGui/QStandardItemModel \
 		C:/Qt/6.5.1/mingw_64/include/QtGui/qstandarditemmodel.h
@@ -1152,7 +1187,119 @@ debug/newwindow.o: ../newwindow.cpp ../newwindow.h \
 debug/tdiocese.o: ../tdiocese.cpp ../tdiocese.h \
 		../tparish.h \
 		../tpriest.h \
-		../tshop.h
+		../tshop.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/QString \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qstring.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qchar.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qglobal.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qtversionchecks.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qconfig.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qtcore-config.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qtconfigmacros.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qtcoreexports.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qtpreprocessorsupport.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qtnoop.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qsystemdetection.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qprocessordetection.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qcompilerdetection.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qassert.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qtypes.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qtclasshelpermacros.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qtversion.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qtypeinfo.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qcontainerfwd.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qsysinfo.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qlogging.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qflags.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qcompare_impl.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qatomic.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qbasicatomic.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qatomic_cxx11.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qgenericatomic.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qconstructormacros.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qdarwinhelpers.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qexceptionhandling.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qforeach.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qtdeprecationmarkers.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qttypetraits.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qfunctionpointer.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qglobalstatic.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qmalloc.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qminmax.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qnumeric.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qoverload.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qswap.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qtenvironmentvariables.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qtresource.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qttranslation.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qversiontagging.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qstringview.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qbytearray.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qrefcount.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qnamespace.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qtmetamacros.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qarraydata.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qpair.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qarraydatapointer.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qarraydataops.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qcontainertools_impl.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qxptype_traits.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qbytearrayalgorithms.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qbytearrayview.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qstringfwd.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/q20type_traits.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qstringliteral.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qstringalgorithms.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qanystringview.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qutf8stringview.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qstringtokenizer.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qstringbuilder.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/QFile \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qfile.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qfiledevice.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qiodevice.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qiodevicebase.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qobject.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qobjectdefs.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qobjectdefs_impl.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qlist.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qhashfunctions.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qiterator.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qbytearraylist.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qstringlist.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qalgorithms.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qstringmatcher.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qcoreevent.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qscopedpointer.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qmetatype.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qcompare.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qdatastream.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qfloat16.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qmath.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qiterable.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qmetacontainer.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qcontainerinfo.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qtaggedpointer.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qscopeguard.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qobject_impl.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qbindingstorage.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/QVector \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qvector.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/QTextStream \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qtextstream.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qstringconverter_base.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/QDebug \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qdebug.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qcontiguouscache.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qsharedpointer.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qshareddata.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qsharedpointer_impl.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qmap.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qshareddata_impl.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qset.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qhash.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/qvarlengtharray.h \
+		C:/Qt/6.5.1/mingw_64/include/QtCore/q20memory.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\tdiocese.o ..\tdiocese.cpp
 
 debug/tparish.o: ../tparish.cpp ../tparish.h \

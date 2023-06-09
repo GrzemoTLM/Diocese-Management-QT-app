@@ -8,11 +8,17 @@
 #include <QTranslator>
 #include <QString>
 #include <string>
+#include <fstream>
+#include <QDebug>
+
 
 int main(int argc, char *argv[])
 {
     std::string dioceseName("Diocese of Saint Doggi X");
     TDiocese diocese(dioceseName);
+    std::string fileName = ":/new/prefix2/parishes.txt";
+    diocese.loadParishesFromFile(fileName);
+
     QApplication a(argc, argv);
 
     QTranslator translator;
@@ -29,6 +35,7 @@ int main(int argc, char *argv[])
 
     MainWindow w;
     w.setDiocese(&diocese);
+    w.newWindow.setDiocese(&diocese);
     w.show();
     return a.exec();
 }
