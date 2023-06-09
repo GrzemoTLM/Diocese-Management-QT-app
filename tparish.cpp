@@ -16,7 +16,9 @@ void TParish::addPriest(const std::string& firstName, const std::string& lastNam
     TPriest priest(firstName, lastName, position);
     priests.push_back(priest);
 }
-
+std::string TParish::getParishName() const {
+    return parishName;
+}
 void TParish::addItem(const TShop& shopItem)
 {
     items.push_back(shopItem);

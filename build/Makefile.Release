@@ -135,6 +135,7 @@ compiler_rcc_clean:
 release/qrc_Pictures.cpp: ../Pictures.qrc \
 		C:/Qt/6.5.1/mingw_64/bin/rcc.exe \
 		../items.csv \
+		../parishes.txt \
 		../pictrues/Piesel.jpg \
 		../pictrues/shoplogo.png \
 		../pictrues/Church1.png \

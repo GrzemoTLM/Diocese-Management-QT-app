@@ -8,4 +8,7 @@
     <qresource prefix="/new/prefix2">
         <file>items.csv</file>
     </qresource>
+    <qresource prefix="/new/prefix3">
+        <file>parishes.txt</file>
+    </qresource>
 </RCC>

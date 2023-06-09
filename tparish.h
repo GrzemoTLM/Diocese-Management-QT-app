@@ -14,6 +14,7 @@ public:
     ~TParish();
     void addPriest(const std::string& firstName, const std::string& lastName, const std::string& position);
     void addItem(const TShop& shopItem);
+    std::string getParishName() const;
     void printPriests() const;
     void printItems() const;
     int getFaithful() const;
