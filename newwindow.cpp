@@ -9,7 +9,7 @@
 #include <QTextStream>
 #include <QStringList>
 #include <QStandardItemModel>
-
+#include <QStringListModel>
 
 
 NewWindow::NewWindow(QWidget *parent) :
@@ -62,6 +62,9 @@ NewWindow::NewWindow(QWidget *parent) :
     ui->LabelEQ->setStyleSheet("font-size: 22px; font-family: Calibri;");
     QPixmap obrazek2(":/new/prefix1/pictrues/shoplogo.png");
     ui->LabelShopPic->setPixmap(obrazek2.scaled(ui->LabelShopPic->size(),Qt::KeepAspectRatio,Qt::SmoothTransformation));
+    //syngał odpowiedzialny za aktualizowanie list przemdiotów dla wybranej parafii
+    connect(ui->comboBoxParish, SIGNAL(currentIndexChanged(int)), this, SLOT(updateItemView(int)));
+    //
 }
 void NewWindow::setDiocese(TDiocese* diocese)
 {
@@ -94,6 +97,7 @@ void loadItemsFromFile(TParish& parish, const QString& fileName)
 
 void NewWindow::on_ButtonBuy_clicked()
 {
+
      // Pobranie aktualnie wybranego przedmiotu
      QString selectedItem = ui->comboBoxShop->currentText();
 
@@ -108,10 +112,13 @@ void NewWindow::on_ButtonBuy_clicked()
             break;
         }
      }
+     selectedItem = ui->comboBoxShop->currentText();
+     QStringList partsXD = selectedItem.split('(');
+     QString WhatASpagetti = partsXD.first();
      // Jeśli znaleziono parafię, dodaj przedmiot do jej wektora przedmiotów
      if (parish) {
         // Tworzenie nowego obiektu TShop na podstawie wybranego przedmiotu
-        TShop newItem(selectedItem.toStdString(), 0.0);  // Zakładam, że cena zostanie ustawiona na 0
+        TShop newItem(WhatASpagetti.toStdString(), 0.0);  // Zakładam, że cena zostanie ustawiona na 0
 
         // Dodawanie nowego przedmiotu do wektora przedmiotów parafii
         parish->addItem(newItem);
@@ -132,22 +139,40 @@ void NewWindow::on_ButtonBuy_clicked()
      // Otwarcie pliku w trybie dopisywania
      QFile outputFile(fileName);
      if (outputFile.open(QIODevice::Append | QIODevice::Text)) {
-        // Pobranie aktualnie wybranego przedmiotu
         QString selectedItem = ui->comboBoxShop->currentText();
+        QStringList parts = selectedItem.split('(');
 
-        // Zapisanie przedmiotu do pliku
-        QTextStream out(&outputFile);
-        out << selectedItem << "\n";
+        if (!parts.isEmpty()) {
+            QString itemName = parts.first();
 
-        // Zamknięcie pliku
+            QTextStream out(&outputFile);
+            out << itemName << "\n";
+
+            qDebug() << "Added item" << itemName << "to" << fileName;
+        } else {
+            qDebug() << "Invalid selected item format";
+        }
+
         outputFile.close();
-
-        qDebug() << "Added item" << selectedItem << "to" << fileName;
      } else {
         qDebug() << "Failed to open file" << fileName;
      }
+     updateItemView(ui->comboBoxParish->currentIndex());
 }
-
+void NewWindow::updateItemView(int index)
+{
+     TParish* parish = nullptr;
+     parish = &mdiocese->parishes[index];
+     std::vector<TShop> items = parish->getItems();
+     QStringList itemList;
+     QStringListModel* model = new QStringListModel(this);
+     for(const TShop &item: items)
+     {
+        itemList<< QString::fromStdString(item.getItemName());
+     }
+     model->setStringList(itemList);
+     ui->listViewItems->setModel(model);
+}
 NewWindow::~NewWindow()
 {
     delete ui;

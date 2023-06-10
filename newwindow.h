@@ -22,6 +22,8 @@ private slots:
 
     void on_ButtonBuy_clicked();
 
+    void updateItemView(int index);
+
 private:
     Ui::NewWindow *ui;
     TDiocese* mdiocese;

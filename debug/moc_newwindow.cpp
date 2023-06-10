@@ -42,16 +42,18 @@ static constexpr auto qt_meta_stringdata_CLASSNewWindowENDCLASS = QtMocHelpers::
     "on_comboBoxShop_currentIndexChanged",
     "",
     "index",
-    "on_ButtonBuy_clicked"
+    "on_ButtonBuy_clicked",
+    "updateItemView"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSNewWindowENDCLASS_t {
-    uint offsetsAndSizes[10];
+    uint offsetsAndSizes[12];
     char stringdata0[10];
     char stringdata1[36];
     char stringdata2[1];
     char stringdata3[6];
     char stringdata4[21];
+    char stringdata5[15];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSNewWindowENDCLASS_t::offsetsAndSizes) + ofs), len 
@@ -61,13 +63,15 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSNewWindowENDCLASS_t qt_meta_str
         QT_MOC_LITERAL(10, 35),  // "on_comboBoxShop_currentIndexC..."
         QT_MOC_LITERAL(46, 0),  // ""
         QT_MOC_LITERAL(47, 5),  // "index"
-        QT_MOC_LITERAL(53, 20)   // "on_ButtonBuy_clicked"
+        QT_MOC_LITERAL(53, 20),  // "on_ButtonBuy_clicked"
+        QT_MOC_LITERAL(74, 14)   // "updateItemView"
     },
     "NewWindow",
     "on_comboBoxShop_currentIndexChanged",
     "",
     "index",
-    "on_ButtonBuy_clicked"
+    "on_ButtonBuy_clicked",
+    "updateItemView"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
@@ -79,7 +83,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSNewWindowENDCLASS[] = {
       11,       // revision
        0,       // classname
        0,    0, // classinfo
-       2,   14, // methods
+       3,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -87,12 +91,14 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSNewWindowENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    1,   26,    2, 0x08,    1 /* Private */,
-       4,    0,   29,    2, 0x08,    3 /* Private */,
+       1,    1,   32,    2, 0x08,    1 /* Private */,
+       4,    0,   35,    2, 0x08,    3 /* Private */,
+       5,    1,   36,    2, 0x08,    4 /* Private */,
 
  // slots: parameters
     QMetaType::Void, QMetaType::Int,    3,
     QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,    3,
 
        0        // eod
 };
@@ -110,7 +116,10 @@ Q_CONSTINIT const QMetaObject NewWindow::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<int, std::false_type>,
         // method 'on_ButtonBuy_clicked'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'updateItemView'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<int, std::false_type>
     >,
     nullptr
 } };
@@ -122,6 +131,7 @@ void NewWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         (void)_t;
         switch (_id) {
         case 1: _t->on_ButtonBuy_clicked(); break;
+        case 2: _t->updateItemView((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         default: ;
         }
     }
@@ -146,13 +156,13 @@ int NewWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
+        if (_id < 3)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 3;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 2)
+        if (_id < 3)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 2;
+        _id -= 3;
     }
     return _id;
 }
