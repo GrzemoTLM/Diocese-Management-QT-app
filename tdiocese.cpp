@@ -46,7 +46,14 @@ void TDiocese::loadParishesFromFile(const std::string& fileName)
         qDebug() << "Nie można otworzyć pliku:" << QString::fromStdString(fileName);
     }
 }
-
+void TDiocese::changeBudget(double price)
+{
+    DioceseBudget-=price;
+}
+double TDiocese::getDioceseBudget() const
+{
+    return DioceseBudget;
+}
 TDiocese::~TDiocese()
 {
 

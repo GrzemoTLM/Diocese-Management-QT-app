@@ -73,7 +73,87 @@ void NewWindow::setDiocese(TDiocese* diocese)
      }
 
 }
+void loadItemsFromFile(TParish& parish, const QString& fileName)
+{
+     QFile file(fileName);
+     if (file.open(QIODevice::ReadOnly | QIODevice::Text))
+     {
+        QTextStream in(&file);
+        while (!in.atEnd())
+        {
+            QString itemName = in.readLine().trimmed();
+            if (!itemName.isEmpty())
+            {
+                TShop item(itemName.toStdString(), 0.0);  // Ustawienie ceny na 0.0 lub dowolną inną wartość
+                parish.addItem(item);
+            }
+        }
+        file.close();
+     }
+}
+
+void NewWindow::on_ButtonBuy_clicked()
+{
+     // Pobranie aktualnie wybranego przedmiotu
+     QString selectedItem = ui->comboBoxShop->currentText();
+
+     // Pobranie aktualnie wybranej parafii
+     QString selectedParish = ui->comboBoxParish->currentText();
+
+     // Wyszukanie obiektu parafii na podstawie wybranej nazwy
+     TParish* parish = nullptr;
+     for (TParish& p : mdiocese->parishes) {
+        if (p.getParishName() == selectedParish.toStdString()) {
+            parish = &p;
+            break;
+        }
+     }
+     // Jeśli znaleziono parafię, dodaj przedmiot do jej wektora przedmiotów
+     if (parish) {
+        // Tworzenie nowego obiektu TShop na podstawie wybranego przedmiotu
+        TShop newItem(selectedItem.toStdString(), 0.0);  // Zakładam, że cena zostanie ustawiona na 0
+
+        // Dodawanie nowego przedmiotu do wektora przedmiotów parafii
+        parish->addItem(newItem);
+
+        qDebug() << "Added item" << selectedItem << "to parish" << selectedParish;
+     } else {
+        qDebug() << "Parish not found!";
+     }
+     // Pobranie indeksu wybranej parafii
+     int parishIndex = ui->comboBoxParish->currentIndex();
+
+     // Inkrementacja indeksu, aby uzyskać numer porządkowy parafii (indeks + 1)
+     int parishNumber = parishIndex + 1;
+
+     // Utworzenie nazwy pliku dla danej parafii
+     QString fileName = QString("parish%1Items.txt").arg(parishNumber);
+
+     // Otwarcie pliku w trybie dopisywania
+     QFile outputFile(fileName);
+     if (outputFile.open(QIODevice::Append | QIODevice::Text)) {
+        // Pobranie aktualnie wybranego przedmiotu
+        QString selectedItem = ui->comboBoxShop->currentText();
+
+        // Zapisanie przedmiotu do pliku
+        QTextStream out(&outputFile);
+        out << selectedItem << "\n";
+
+        // Zamknięcie pliku
+        outputFile.close();
+
+        qDebug() << "Added item" << selectedItem << "to" << fileName;
+     } else {
+        qDebug() << "Failed to open file" << fileName;
+     }
+}
+
 NewWindow::~NewWindow()
 {
     delete ui;
 }
+
+
+
+
+

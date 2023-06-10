@@ -89,7 +89,7 @@
      <string>Change Parish</string>
     </property>
    </widget>
-   <widget class="QListView" name="listView_2">
+   <widget class="QListView" name="listViewItems">
     <property name="geometry">
      <rect>
       <x>400</x>
