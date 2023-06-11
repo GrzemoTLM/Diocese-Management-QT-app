@@ -17,12 +17,16 @@ public:
     void loadParishesFromFile(const std::string& fileName);
     std::string getDioceseName() const;
     int faithfulls;
+    double getDioceseBudget()const;
+    void changeBudget(double price);
 
 private:
 
     int numParishes; // Liczba parafii
     void resizeParishes(); // Funkcja do zwiększania pojemności tablicy parafii, gdy jest pełna
     std::string dioceseName; // Nazwa diecezji
+    double DioceseBudget;
+
 
 };
 

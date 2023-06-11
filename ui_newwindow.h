@@ -34,7 +34,7 @@ public:
     QPushButton *ButtonAddPriest;
     QPushButton *ButtonDeletePriest;
     QPushButton *ButtonChangeParish;
-    QListView *listView_2;
+    QListView *listViewItems;
     QLabel *LabelParishName;
     QLabel *LabelEQ;
     QLabel *label;
@@ -76,9 +76,9 @@ public:
         ButtonChangeParish = new QPushButton(centralwidget);
         ButtonChangeParish->setObjectName("ButtonChangeParish");
         ButtonChangeParish->setGeometry(QRect(260, 600, 101, 27));
-        listView_2 = new QListView(centralwidget);
-        listView_2->setObjectName("listView_2");
-        listView_2->setGeometry(QRect(400, 390, 256, 192));
+        listViewItems = new QListView(centralwidget);
+        listViewItems->setObjectName("listViewItems");
+        listViewItems->setGeometry(QRect(400, 390, 256, 192));
         LabelParishName = new QLabel(centralwidget);
         LabelParishName->setObjectName("LabelParishName");
         LabelParishName->setGeometry(QRect(210, 120, 141, 19));

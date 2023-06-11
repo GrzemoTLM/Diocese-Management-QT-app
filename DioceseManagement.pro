@@ -44,4 +44,6 @@ RESOURCES += \
     Pictures.qrc
 
 DISTFILES += \
-    items.csv
+    items.csv \
+    parish1 \
+    parish1Items

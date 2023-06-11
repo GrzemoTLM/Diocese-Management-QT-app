@@ -16,7 +16,7 @@ public:
     void addItem(const TShop& shopItem);
     std::string getParishName() const;
     void printPriests() const;
-    void printItems() const;
+    std::vector<TShop> getItems() const;
     int getFaithful() const;
 
 protected:

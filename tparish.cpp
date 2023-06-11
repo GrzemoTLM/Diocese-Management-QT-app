@@ -29,9 +29,9 @@ void TParish::printPriests() const
     // Wypisanie księży
 }
 
-void TParish::printItems() const
+std::vector<TShop> TParish::getItems() const
 {
-    // Wypisanie przedmiotów
+    return items;
 }
 
 int TParish::getFaithful() const

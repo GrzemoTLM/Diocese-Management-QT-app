@@ -72,7 +72,9 @@ OBJECTS       = debug/main.o \
 		debug/moc_mainwindow.o \
 		debug/moc_newwindow.o
 
-DIST          = items.csv mainwindow.h \
+DIST          = items.csv \
+		parish1 \
+		parish1Items mainwindow.h \
 		newwindow.h \
 		tdiocese.h \
 		tparish.h \
@@ -136,6 +138,14 @@ debug/qrc_Pictures.cpp: Pictures.qrc \
 		C:/Qt/6.5.1/mingw_64/bin/rcc.exe \
 		items.csv \
 		parishes.txt \
+		parish2Items.txt \
+		parish3Items.txt \
+		parish4Items.txt \
+		parish3.txt \
+		parish2.txt \
+		parish4.txt \
+		parish1.txt \
+		parish1Items.txt \
 		pictrues/Piesel.jpg \
 		pictrues/shoplogo.png \
 		pictrues/Church1.png \

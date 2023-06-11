@@ -17,6 +17,13 @@ public:
     void setDiocese(TDiocese* diocese);
     ~NewWindow();
 
+private slots:
+    void on_comboBoxShop_currentIndexChanged(int index);
+
+    void on_ButtonBuy_clicked();
+
+    void updateItemView(int index);
+
 private:
     Ui::NewWindow *ui;
     TDiocese* mdiocese;
