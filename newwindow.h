@@ -20,6 +20,8 @@ public:
 private slots:
     void on_comboBoxShop_currentIndexChanged(int index);
 
+    void loadItemsFromFile(TParish* parish, const QString& fileName);
+
     void on_ButtonBuy_clicked();
 
     void updateItemView(int index);

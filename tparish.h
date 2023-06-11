@@ -18,6 +18,7 @@ public:
     void printPriests() const;
     std::vector<TShop> getItems() const;
     int getFaithful() const;
+    void clearItems();
 
 protected:
 
