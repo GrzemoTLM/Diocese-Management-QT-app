@@ -42,18 +42,26 @@ static constexpr auto qt_meta_stringdata_CLASSNewWindowENDCLASS = QtMocHelpers::
     "on_comboBoxShop_currentIndexChanged",
     "",
     "index",
+    "loadItemsFromFile",
+    "TParish*",
+    "parish",
+    "fileName",
     "on_ButtonBuy_clicked",
     "updateItemView"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSNewWindowENDCLASS_t {
-    uint offsetsAndSizes[12];
+    uint offsetsAndSizes[20];
     char stringdata0[10];
     char stringdata1[36];
     char stringdata2[1];
     char stringdata3[6];
-    char stringdata4[21];
-    char stringdata5[15];
+    char stringdata4[18];
+    char stringdata5[9];
+    char stringdata6[7];
+    char stringdata7[9];
+    char stringdata8[21];
+    char stringdata9[15];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSNewWindowENDCLASS_t::offsetsAndSizes) + ofs), len 
@@ -63,13 +71,21 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSNewWindowENDCLASS_t qt_meta_str
         QT_MOC_LITERAL(10, 35),  // "on_comboBoxShop_currentIndexC..."
         QT_MOC_LITERAL(46, 0),  // ""
         QT_MOC_LITERAL(47, 5),  // "index"
-        QT_MOC_LITERAL(53, 20),  // "on_ButtonBuy_clicked"
-        QT_MOC_LITERAL(74, 14)   // "updateItemView"
+        QT_MOC_LITERAL(53, 17),  // "loadItemsFromFile"
+        QT_MOC_LITERAL(71, 8),  // "TParish*"
+        QT_MOC_LITERAL(80, 6),  // "parish"
+        QT_MOC_LITERAL(87, 8),  // "fileName"
+        QT_MOC_LITERAL(96, 20),  // "on_ButtonBuy_clicked"
+        QT_MOC_LITERAL(117, 14)   // "updateItemView"
     },
     "NewWindow",
     "on_comboBoxShop_currentIndexChanged",
     "",
     "index",
+    "loadItemsFromFile",
+    "TParish*",
+    "parish",
+    "fileName",
     "on_ButtonBuy_clicked",
     "updateItemView"
 };
@@ -83,7 +99,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSNewWindowENDCLASS[] = {
       11,       // revision
        0,       // classname
        0,    0, // classinfo
-       3,   14, // methods
+       4,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -91,12 +107,14 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSNewWindowENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    1,   32,    2, 0x08,    1 /* Private */,
-       4,    0,   35,    2, 0x08,    3 /* Private */,
-       5,    1,   36,    2, 0x08,    4 /* Private */,
+       1,    1,   38,    2, 0x08,    1 /* Private */,
+       4,    2,   41,    2, 0x08,    3 /* Private */,
+       8,    0,   46,    2, 0x08,    6 /* Private */,
+       9,    1,   47,    2, 0x08,    7 /* Private */,
 
  // slots: parameters
     QMetaType::Void, QMetaType::Int,    3,
+    QMetaType::Void, 0x80000000 | 5, QMetaType::QString,    6,    7,
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int,    3,
 
@@ -115,6 +133,10 @@ Q_CONSTINIT const QMetaObject NewWindow::staticMetaObject = { {
         // method 'on_comboBoxShop_currentIndexChanged'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<int, std::false_type>,
+        // method 'loadItemsFromFile'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<TParish *, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const QString &, std::false_type>,
         // method 'on_ButtonBuy_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'updateItemView'
@@ -130,8 +152,9 @@ void NewWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         auto *_t = static_cast<NewWindow *>(_o);
         (void)_t;
         switch (_id) {
-        case 1: _t->on_ButtonBuy_clicked(); break;
-        case 2: _t->updateItemView((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 1: _t->loadItemsFromFile((*reinterpret_cast< std::add_pointer_t<TParish*>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2]))); break;
+        case 2: _t->on_ButtonBuy_clicked(); break;
+        case 3: _t->updateItemView((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         default: ;
         }
     }
@@ -156,13 +179,13 @@ int NewWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 3)
+        if (_id < 4)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 3;
+        _id -= 4;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 3)
+        if (_id < 4)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 3;
+        _id -= 4;
     }
     return _id;
 }

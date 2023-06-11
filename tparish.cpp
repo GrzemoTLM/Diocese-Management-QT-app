@@ -33,7 +33,10 @@ std::vector<TShop> TParish::getItems() const
 {
     return items;
 }
-
+void TParish::clearItems()
+{
+    items.clear();
+}
 int TParish::getFaithful() const
 {
     int totalFaithful = 0;
