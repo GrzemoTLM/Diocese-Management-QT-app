@@ -33,7 +33,18 @@ std::vector<TShop> TParish::getItems() const
 {
     return items;
 }
-
+void TParish::clearItems()
+{
+    items.clear();
+}
+double TParish::getBudget() const
+{
+    return parishBudget;
+}
+void TParish::setBudget(double budget)
+{
+    parishBudget = budget;
+}
 int TParish::getFaithful() const
 {
     int totalFaithful = 0;

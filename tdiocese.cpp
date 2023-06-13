@@ -28,12 +28,16 @@ void TDiocese::loadParishesFromFile(const std::string& fileName)
         {
             QString line = in.readLine();
             QStringList parts = line.split(',');
-            if (parts.size() == 2)
+            if (parts.size() == 3) // Dodatkowy warunek dla trzech części (nazwa parafii, wierni, budżet)
             {
                 QString parishName = parts[0].trimmed();
                 int faithful = parts[1].trimmed().toInt();
+                double budget = parts[2].trimmed().toDouble(); // Wczytanie budżetu jako trzeciej części
+
                 // Tworzenie obiektu TParish i dodawanie go do wektora parishes
                 TParish parish(parishName.toStdString(), faithful);
+                parish.setBudget(budget); // Ustawienie wczytanego budżetu
+
                 parishes.push_back(parish);
             }
         }
@@ -46,6 +50,7 @@ void TDiocese::loadParishesFromFile(const std::string& fileName)
         qDebug() << "Nie można otworzyć pliku:" << QString::fromStdString(fileName);
     }
 }
+
 void TDiocese::changeBudget(double price)
 {
     DioceseBudget-=price;
