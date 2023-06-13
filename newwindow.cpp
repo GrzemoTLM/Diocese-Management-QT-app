@@ -50,6 +50,7 @@ NewWindow::NewWindow(QWidget* parent)
 
     ui->LabelComboBox->setText("Choose parish to manage");
     ui->LabelComboBox->setStyleSheet("font-size: 22px; font-family: Calibri;");
+    ui->LabelMoney->setStyleSheet("font-size: 22px; font-family: Calibri;");
     ui->LabelPriests->setText("Priests");
     ui->LabelPriests->setStyleSheet("font-size: 22px; font-family: Calibri;");
     ui->LabelBudget->setStyleSheet(
@@ -177,7 +178,8 @@ void NewWindow::updateItemView(int index)
 {
     TParish* parish = nullptr;
     parish = &mdiocese->parishes[index];
-
+    QString parishbudget = QString::number(parish->getBudget());
+    ui->LabelMoney->setText(parishbudget+"zł");
     // Wyczyszczenie listy przedmiotów parafii
     parish->clearItems();
 

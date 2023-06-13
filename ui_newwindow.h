@@ -99,7 +99,7 @@ public:
         ButtonBuy->setGeometry(QRect(760, 420, 80, 27));
         LabelMoney = new QLabel(centralwidget);
         LabelMoney->setObjectName("LabelMoney");
-        LabelMoney->setGeometry(QRect(820, 590, 56, 19));
+        LabelMoney->setGeometry(QRect(820, 590, 101, 41));
         LabelShopPic = new QLabel(centralwidget);
         LabelShopPic->setObjectName("LabelShopPic");
         LabelShopPic->setGeometry(QRect(830, 280, 101, 101));
@@ -118,7 +118,7 @@ public:
         NewWindow->setStatusBar(statusbar);
         menuBar = new QMenuBar(NewWindow);
         menuBar->setObjectName("menuBar");
-        menuBar->setGeometry(QRect(0, 0, 936, 21));
+        menuBar->setGeometry(QRect(0, 0, 936, 24));
         NewWindow->setMenuBar(menuBar);
 
         retranslateUi(NewWindow);

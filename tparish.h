@@ -18,6 +18,8 @@ public:
     void printPriests() const;
     std::vector<TShop> getItems() const;
     int getFaithful() const;
+    double getBudget() const;
+    void setBudget(double budget);
     void clearItems();
 
 protected:
@@ -25,6 +27,7 @@ protected:
 private:
     std::string parishName;
     int faithful;
+    double parishBudget;
     std::vector<TPriest> priests; // Kontener na księży
     std::vector<TShop> items; // Kontener na przedmioty
 };
