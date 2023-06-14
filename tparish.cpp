@@ -1,5 +1,6 @@
 #include "tparish.h"
-
+#include <QDebug>>
+#include "tshop.h"
 TParish::TParish(std::string parishname, int am)
 {
     this ->parishName = parishname;

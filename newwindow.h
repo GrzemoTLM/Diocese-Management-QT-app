@@ -29,6 +29,7 @@ private slots:
 private:
     Ui::NewWindow *ui;
     TDiocese* mdiocese;
+    std::vector<TShop> shopItems;
 
 
 };
