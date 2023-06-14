@@ -1,4 +1,4 @@
-Parish of Marcel Lefebvre,2137,10000
-Parish of Carl Stehlin,2137,20000
-Parish of Simon Bubble,2137,30000
+Parish of Marcel Lefebvre,0,15000
+Parish of Carl Stehlin,0,25000
+Parish of Simon Bubble,0,30000
 

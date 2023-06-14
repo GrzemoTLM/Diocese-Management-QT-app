@@ -10,6 +10,8 @@
 #include <QStringList>
 #include <QStandardItemModel>
 #include <QStringListModel>
+#include <QDataStream>
+#include <QRegularExpression>
 
 NewWindow::NewWindow(QWidget* parent)
     : QMainWindow(parent)
@@ -17,7 +19,6 @@ NewWindow::NewWindow(QWidget* parent)
 
 {
     ui->setupUi(this);
-    QVector<TShop> shopItems;
     QFile file(":/new/prefix2/items.csv");
     if (file.open(QIODevice::ReadOnly | QIODevice::Text))
     {
@@ -117,63 +118,88 @@ void NewWindow::on_ButtonBuy_clicked()
             break;
         }
     }
+
     selectedItem = ui->comboBoxShop->currentText();
-    QStringList partsXD = selectedItem.split('(');
+    QStringList partsXD = selectedItem.split(" (");
     QString WhatASpagetti = partsXD.first();
-    // Jeśli znaleziono parafię, dodaj przedmiot do jej wektora przedmiotów
+
+    // Jeśli znaleziono parafię, sprawdź, czy stać ją na ten przedmiot
     if (parish)
     {
-        // Tworzenie nowego obiektu TShop na podstawie wybranego przedmiotu
-        TShop newItem(WhatASpagetti.toStdString(),
-                      0.0); // Zakładam, że cena zostanie ustawiona na 0
-
-        // Dodawanie nowego przedmiotu do wektora przedmiotów parafii
-        parish->addItem(newItem);
-
-        qDebug() << "Added item" << selectedItem << "to parish" << selectedParish;
-    }
-    else
-    {
-        qDebug() << "Parish not found!";
-    }
-    // Pobranie indeksu wybranej parafii
-    int parishIndex = ui->comboBoxParish->currentIndex();
-
-    // Inkrementacja indeksu, aby uzyskać numer porządkowy parafii (indeks + 1)
-    int parishNumber = parishIndex + 1;
-
-    // Utworzenie nazwy pliku dla danej parafii
-    QString fileName = QString("parish%1Items.txt").arg(parishNumber);
-
-    // Otwarcie pliku w trybie dopisywania
-    QFile outputFile(fileName);
-    if (outputFile.open(QIODevice::Append | QIODevice::Text))
-    {
-        QString selectedItem = ui->comboBoxShop->currentText();
-        QStringList parts = selectedItem.split('(');
-
-        if (!parts.isEmpty())
+        // Sprawdzenie, czy parafia ma wystarczający budżet
+        double itemCost = 2000.0; // Koszt przedmiotu
+        for (const TShop& shopItem : shopItems)
         {
-            QString itemName = parts.first();
+            if (shopItem.getItemName() == WhatASpagetti.toStdString())
+            {
+                itemCost = shopItem.getItemCost();
+                break;
+            }
+        }
 
-            QTextStream out(&outputFile);
-            out << itemName << "\n";
+        double parishBudget = parish->getBudget();
+        if (parishBudget >= itemCost)
+        {
+            // Tworzenie nowego obiektu TShop na podstawie wybranego przedmiotu
+            TShop newItem(WhatASpagetti.toStdString(), itemCost);
 
-            qDebug() << "Added item" << itemName << "to" << fileName;
+            // Dodawanie nowego przedmiotu do wektora przedmiotów parafii
+            parish->addItem(newItem);
+
+            // Zmiana budżetu parafii po zakupie przedmiotu
+            parishBudget -= itemCost;
+            parish->setBudget(parishBudget);
+            qDebug() << "Parish budget updated. New budget:" << parishBudget;
+
+            qDebug() << "Added item" << selectedItem << "to parish" << selectedParish;
+
+            // Pobranie indeksu wybranej parafii
+            int parishIndex = ui->comboBoxParish->currentIndex();
+
+            // Inkrementacja indeksu, aby uzyskać numer porządkowy parafii (indeks + 1)
+            int parishNumber = parishIndex + 1;
+
+            // Utworzenie nazwy pliku dla danej parafii
+            QString fileName = QString("parish%1Items.txt").arg(parishNumber);
+
+            // Otwarcie pliku w trybie dopisywania
+            QFile outputFile(fileName);
+            if (outputFile.open(QIODevice::Append | QIODevice::Text))
+            {
+                QString selectedItem = ui->comboBoxShop->currentText();
+                QStringList parts = selectedItem.split('(');
+
+                if (!parts.isEmpty())
+                {
+                    QString itemName = parts.first();
+
+                    QTextStream out(&outputFile);
+                    out << itemName << "\n";
+
+                    qDebug() << "Added item" << itemName << "to" << fileName;
+                }
+                else
+                {
+                    qDebug() << "Invalid selected item format";
+                }
+
+                outputFile.close();
+            }
+            else
+            {
+                qDebug() << "Failed to open file" << fileName;
+            }
+
+            updateItemView(ui->comboBoxParish->currentIndex());
         }
         else
         {
-            qDebug() << "Invalid selected item format";
+            qDebug() << "Parish cannot afford this item!";
         }
-
-        outputFile.close();
     }
-    else
-    {
-        qDebug() << "Failed to open file" << fileName;
-    }
-    updateItemView(ui->comboBoxParish->currentIndex());
 }
+
+
 void NewWindow::updateItemView(int index)
 {
     TParish* parish = nullptr;
@@ -199,5 +225,50 @@ void NewWindow::updateItemView(int index)
 }
 NewWindow::~NewWindow()
 {
+    QFile file("parishes.txt");
+    if (file.open(QIODevice::ReadWrite | QIODevice::Text))
+    {
+        QString contents = file.readAll();
+        QStringList lines = contents.split("\n");
+        QTextStream out(&file);
+
+        for (const TParish& parish : mdiocese->parishes)
+        {
+            QString parishName = parish.getParishName().c_str();
+            QString members = QString::number(parish.getFaithful());
+            QString budget = QString::number(parish.getBudget());
+            QString parishLine = QString("%1,%2,%3").arg(parishName, members, budget);
+            bool found = false;
+
+            for (int i = 0; i < lines.size(); ++i)
+            {
+                QString& line = lines[i];
+                if (line.startsWith(parishName))
+                {
+                    QStringList parts = line.split(",");
+                    if (parts.size() >= 3)
+                    {
+                        parts[1] = members; // Aktualizacja liczby wiernych
+                        parts[2] = budget; // Aktualizacja budżetu
+                        line = parts.join(","); // Złączenie części wiersza
+                        found = true;
+                        break;
+                    }
+                }
+            }
+
+            if (!found)
+            {
+                out << parishLine << "\n";
+            }
+        }
+
+        file.resize(0);
+        out << lines.join("\n");
+        file.close();
+    }
+
     delete ui;
 }
+
+
