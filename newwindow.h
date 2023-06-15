@@ -18,6 +18,7 @@ public:
      explicit NewWindow(QWidget *parent = nullptr);
     void setDiocese(TDiocese* diocese);
       void loadPriestsForParishes();
+    void addPriestsToList();
     ~NewWindow();
 
 private slots:
@@ -33,7 +34,6 @@ private slots:
 
     void on_accept_clicked();
 
-    void addPriestsToList();
 
 
 private:

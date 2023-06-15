@@ -36,6 +36,14 @@ void Dialog::on_buttonBox_accepted()
 
         // Zamknij plik
         file.close();
+
+        // Wywołanie metody loadPriestsForParishes z klasy NewWindow
+        NewWindow* mainWindow = qobject_cast<NewWindow*>(parent());
+        if (mainWindow)
+        {
+            mainWindow->loadPriestsForParishes();
+            mainWindow->addPriestsToList();
+        }
     }
     else
     {
@@ -46,6 +54,7 @@ void Dialog::on_buttonBox_accepted()
     // Zamykanie okna dialogowego
     accept();
 }
+
 
 void Dialog::on_buttonBox_rejected()
 {

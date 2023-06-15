@@ -1,6 +1,6 @@
 #ifndef DIALOG_H
 #define DIALOG_H
-
+#include <newwindow.h>
 #include <QDialog>
 
 namespace Ui {

@@ -112,9 +112,24 @@ void NewWindow::loadPriestsForParishes()
                     QString lastName = parts[1].trimmed();
                     QString role = parts[2].trimmed();
 
-                    // Utwórz obiekt księdza i dodaj go do parafii
-                    TPriest priest(firstName.toStdString(), lastName.toStdString(), role.toStdString());
-                    parish.addPriest(priest);
+                    // Sprawdź, czy ksiądz już istnieje w parafii
+                    bool priestExists = false;
+                    for (const TPriest& existingPriest : parish.getPriests())
+                    {
+                        if (existingPriest.getFirstName() == firstName.toStdString() &&
+                            existingPriest.getLastName() == lastName.toStdString())
+                        {
+                            priestExists = true;
+                            break;
+                        }
+                    }
+
+                    // Jeśli ksiądz nie istnieje, dodaj go do parafii
+                    if (!priestExists)
+                    {
+                        TPriest priest(firstName.toStdString(), lastName.toStdString(), role.toStdString());
+                        parish.addPriest(priest);
+                    }
                 }
             }
 
@@ -127,6 +142,7 @@ void NewWindow::loadPriestsForParishes()
         }
     }
 }
+
 
 void NewWindow::loadItemsFromFile(TParish* parish, const QString& fileName)
 {
@@ -166,6 +182,12 @@ void NewWindow::addPriestsToList()
     // Jeśli znaleziono parafię, dodaj księży do listy ListPriests
     if (parish)
     {
+        // Wyczyszczenie listy ListPriests
+        QStringList EmptypriestsList;
+        QStringListModel *emptyList = new QStringListModel(EmptypriestsList, this);
+        ui->ListPriests->setModel(emptyList);
+
+
         QStringList priestsList;
         for (const TPriest& priest : parish->getPriests())
         {
@@ -178,8 +200,14 @@ void NewWindow::addPriestsToList()
         // Aktualizacja modelu i przypisanie go do listy ListPriests
         QStringListModel* model = new QStringListModel(priestsList, this);
         ui->ListPriests->setModel(model);
+
+        // Ustawienie większej czcionki dla ListPriests
+        QFont font;
+        font.setPointSize(12); // Ustaw rozmiar czcionki na 12
+        ui->ListPriests->setFont(font);
     }
 }
+
 
 
 
