@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/new/prefix1"/>
+    <qresource prefix="/new/prefix2"/>
+    <qresource prefix="/">
+        <file>music/chants.mp3</file>
+        <file>music/chill-abstract-intention-12099.mp3</file>
+    </qresource>
+</RCC>

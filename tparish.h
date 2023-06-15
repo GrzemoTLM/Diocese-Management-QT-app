@@ -12,10 +12,10 @@ class TParish
 public:
     TParish(std::string parishname, int faithful);
     ~TParish();
-    void addPriest(const std::string& firstName, const std::string& lastName, const std::string& position);
+    void addPriest(const TPriest& priest);
     void addItem(const TShop& shopItem);
     std::string getParishName() const;
-    void printPriests() const;
+    std::vector<TPriest> getPriests() const;
     std::vector<TShop> getItems() const;
     int getFaithful() const;
     double getBudget() const;

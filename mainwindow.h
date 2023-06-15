@@ -3,6 +3,7 @@
 #include <QMainWindow>
 #include "tdiocese.h"
 #include "newwindow.h"
+#include <QtMultimedia>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -22,6 +23,8 @@ private slots:
 
 
     void on_buttonBegin_clicked();
+
+    void on_radioButton_clicked();
 
 private:
     Ui::MainWindow *ui;

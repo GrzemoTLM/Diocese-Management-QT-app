@@ -4,6 +4,7 @@
         <file>pictrues/shoplogo.png</file>
         <file>pictrues/Church1.png</file>
         <file>pictrues/Church2.png</file>
+        <file>pictrues/Church3.png</file>
     </qresource>
     <qresource prefix="/new/prefix2">
         <file>items.csv</file>
@@ -18,5 +19,8 @@
         <file>parish3Items.txt</file>
         <file>parish4.txt</file>
         <file>parish4Items.txt</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>pictrues/Church3.png</file>
     </qresource>
 </RCC>

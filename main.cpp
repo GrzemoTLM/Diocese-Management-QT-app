@@ -10,7 +10,7 @@
 #include <string>
 #include <fstream>
 #include <QDebug>
-
+#include <QtMultimedia>
 
 int main(int argc, char *argv[])
 {
@@ -36,6 +36,8 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.setDiocese(&diocese);
     w.newWindow.setDiocese(&diocese);
+    w.newWindow.loadPriestsForParishes();
+    w.newWindow.addPriestsToList();
     w.show();
     return a.exec();
 }
