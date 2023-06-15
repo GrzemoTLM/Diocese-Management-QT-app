@@ -1,4 +1,4 @@
-Name,Role,Surname
-Name,Role,Surname
-Name,Role,Surname
-XD,xD,xD
+Adam, preacher, Zieliński
+Rafał, senior, Szymański
+Paweł, assistant, Woźniak
+Mateusz,senior,Łukasiewicz

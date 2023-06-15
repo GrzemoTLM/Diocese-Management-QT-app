@@ -158,7 +158,9 @@ debug/qrc_Pictures.cpp: Pictures.qrc \
 		pictrues/Piesel.jpg \
 		pictrues/shoplogo.png \
 		pictrues/Church1.png \
-		pictrues/Church2.png
+		pictrues/Church2.png \
+		pictrues/Church3.png \
+		pictrues/Church3.png
 	D:\QTcra\6.5.1\mingw_64\bin\rcc.exe -name Pictures --no-zstd Pictures.qrc -o debug\qrc_Pictures.cpp
 
 debug/qrc_music.cpp: music.qrc \
@@ -182,7 +184,7 @@ compiler_moc_header_make_all: debug/moc_dialog.cpp debug/moc_mainwindow.cpp debu
 compiler_moc_header_clean:
 	-$(DEL_FILE) debug\moc_dialog.cpp debug\moc_mainwindow.cpp debug\moc_newwindow.cpp
 debug/moc_dialog.cpp: dialog.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/QDialog \
+		newwindow.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qdialog.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtGui/qtguiglobal.h \
@@ -340,6 +342,23 @@ debug/moc_dialog.cpp: dialog.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtCore/QSizeF \
 		../../../QTcra/6.5.1/mingw_64/include/QtGui/QTransform \
 		../../../QTcra/6.5.1/mingw_64/include/QtCore/qnativeinterface.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qstackedwidget.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qframe.h \
+		tshop.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/QMainWindow \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qmainwindow.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qtabwidget.h \
+		tdiocese.h \
+		tparish.h \
+		tpriest.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/QString \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/QFile \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qfile.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qfiledevice.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/QVector \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qvector.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/QTextStream \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/QDialog \
 		debug/moc_predefs.h \
 		../../../QTcra/6.5.1/mingw_64/bin/moc.exe
 	D:\QTcra\6.5.1\mingw_64\bin\moc.exe $(DEFINES) --include "D:/moje dokumenty/GitHub/Diocese-Management-QT-app/debug/moc_predefs.h" -ID:/QTcra/6.5.1/mingw_64/mkspecs/win32-g++ -I"D:/moje dokumenty/GitHub/Diocese-Management-QT-app" -ID:/QTcra/6.5.1/mingw_64/include -ID:/QTcra/6.5.1/mingw_64/include/QtQuick -ID:/QTcra/6.5.1/mingw_64/include/QtOpenGL -ID:/QTcra/6.5.1/mingw_64/include/QtMultimedia -ID:/QTcra/6.5.1/mingw_64/include/QtWidgets -ID:/QTcra/6.5.1/mingw_64/include/QtGui -ID:/QTcra/6.5.1/mingw_64/include/QtQmlModels -ID:/QTcra/6.5.1/mingw_64/include/QtQml -ID:/QTcra/6.5.1/mingw_64/include/QtQmlIntegration -ID:/QTcra/6.5.1/mingw_64/include/QtNetwork -ID:/QTcra/6.5.1/mingw_64/include/QtCore -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include dialog.h -o debug\moc_dialog.cpp
@@ -516,6 +535,7 @@ debug/moc_mainwindow.cpp: mainwindow.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtCore/qvector.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtCore/QTextStream \
 		newwindow.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qdialog.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qstackedwidget.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qframe.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtMultimedia/QtMultimedia \
@@ -839,215 +859,6 @@ debug/moc_mainwindow.cpp: mainwindow.h \
 	D:\QTcra\6.5.1\mingw_64\bin\moc.exe $(DEFINES) --include "D:/moje dokumenty/GitHub/Diocese-Management-QT-app/debug/moc_predefs.h" -ID:/QTcra/6.5.1/mingw_64/mkspecs/win32-g++ -I"D:/moje dokumenty/GitHub/Diocese-Management-QT-app" -ID:/QTcra/6.5.1/mingw_64/include -ID:/QTcra/6.5.1/mingw_64/include/QtQuick -ID:/QTcra/6.5.1/mingw_64/include/QtOpenGL -ID:/QTcra/6.5.1/mingw_64/include/QtMultimedia -ID:/QTcra/6.5.1/mingw_64/include/QtWidgets -ID:/QTcra/6.5.1/mingw_64/include/QtGui -ID:/QTcra/6.5.1/mingw_64/include/QtQmlModels -ID:/QTcra/6.5.1/mingw_64/include/QtQml -ID:/QTcra/6.5.1/mingw_64/include/QtQmlIntegration -ID:/QTcra/6.5.1/mingw_64/include/QtNetwork -ID:/QTcra/6.5.1/mingw_64/include/QtCore -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include mainwindow.h -o debug\moc_mainwindow.cpp
 
 debug/moc_newwindow.cpp: newwindow.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qstackedwidget.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtGui/qtguiglobal.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qglobal.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qtversionchecks.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qconfig.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qtcore-config.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qtconfigmacros.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qtcoreexports.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qtpreprocessorsupport.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qtnoop.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qsystemdetection.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qprocessordetection.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qcompilerdetection.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qassert.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qtypes.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qtclasshelpermacros.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qtversion.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qtypeinfo.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qcontainerfwd.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qsysinfo.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qlogging.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qflags.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qcompare_impl.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qatomic.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qbasicatomic.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qatomic_cxx11.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qgenericatomic.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qconstructormacros.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qdarwinhelpers.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qexceptionhandling.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qforeach.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qtdeprecationmarkers.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qttypetraits.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qfunctionpointer.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qglobalstatic.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qmalloc.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qminmax.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qnumeric.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qoverload.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qswap.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qtenvironmentvariables.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qtresource.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qttranslation.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qversiontagging.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtGui/qtgui-config.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtGui/qtguiexports.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qtwidgets-config.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qtwidgetsexports.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qframe.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qwidget.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtGui/qwindowdefs.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qobjectdefs.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qnamespace.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qtmetamacros.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qobjectdefs_impl.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtGui/qwindowdefs_win.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qobject.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qstring.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qchar.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qstringview.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qbytearray.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qrefcount.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qarraydata.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qpair.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qarraydatapointer.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qarraydataops.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qcontainertools_impl.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qxptype_traits.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qbytearrayalgorithms.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qbytearrayview.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qstringfwd.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/q20type_traits.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qstringliteral.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qstringalgorithms.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qanystringview.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qutf8stringview.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qstringtokenizer.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qstringbuilder.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qlist.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qhashfunctions.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qiterator.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qbytearraylist.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qstringlist.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qalgorithms.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qstringmatcher.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qcoreevent.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qscopedpointer.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qmetatype.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qcompare.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qdatastream.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qiodevicebase.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qfloat16.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qmath.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qiterable.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qmetacontainer.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qcontainerinfo.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qtaggedpointer.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qscopeguard.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qobject_impl.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qbindingstorage.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qmargins.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtGui/qaction.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtGui/qkeysequence.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtGui/qicon.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qsize.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtGui/qpixmap.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtGui/qpaintdevice.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qrect.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qpoint.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtGui/qcolor.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtGui/qrgb.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtGui/qrgba64.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qsharedpointer.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qshareddata.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qsharedpointer_impl.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtGui/qimage.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtGui/qpixelformat.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtGui/qtransform.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtGui/qpolygon.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtGui/qregion.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qline.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qvariant.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qdebug.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qtextstream.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qstringconverter_base.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qcontiguouscache.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qmap.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qshareddata_impl.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qset.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qhash.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qvarlengtharray.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/q20memory.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtGui/qpalette.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtGui/qbrush.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtGui/qfont.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtGui/qfontmetrics.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtGui/qfontinfo.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qsizepolicy.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtGui/qcursor.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtGui/qbitmap.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtGui/qevent.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qiodevice.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qpointer.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qurl.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtGui/qeventpoint.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtGui/qvector2d.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtGui/qvectornd.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtGui/qpointingdevice.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtGui/qinputdevice.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtGui/qscreen.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/QList \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/QObject \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/QRect \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/QSize \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/QSizeF \
-		../../../QTcra/6.5.1/mingw_64/include/QtGui/QTransform \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qnativeinterface.h \
-		tshop.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/QMainWindow \
-		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qmainwindow.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qtabwidget.h \
-		tdiocese.h \
-		tparish.h \
-		tpriest.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/QString \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/QFile \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qfile.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qfiledevice.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/QVector \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/qvector.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/QTextStream \
-		debug/moc_predefs.h \
-		../../../QTcra/6.5.1/mingw_64/bin/moc.exe
-	D:\QTcra\6.5.1\mingw_64\bin\moc.exe $(DEFINES) --include "D:/moje dokumenty/GitHub/Diocese-Management-QT-app/debug/moc_predefs.h" -ID:/QTcra/6.5.1/mingw_64/mkspecs/win32-g++ -I"D:/moje dokumenty/GitHub/Diocese-Management-QT-app" -ID:/QTcra/6.5.1/mingw_64/include -ID:/QTcra/6.5.1/mingw_64/include/QtQuick -ID:/QTcra/6.5.1/mingw_64/include/QtOpenGL -ID:/QTcra/6.5.1/mingw_64/include/QtMultimedia -ID:/QTcra/6.5.1/mingw_64/include/QtWidgets -ID:/QTcra/6.5.1/mingw_64/include/QtGui -ID:/QTcra/6.5.1/mingw_64/include/QtQmlModels -ID:/QTcra/6.5.1/mingw_64/include/QtQml -ID:/QTcra/6.5.1/mingw_64/include/QtQmlIntegration -ID:/QTcra/6.5.1/mingw_64/include/QtNetwork -ID:/QTcra/6.5.1/mingw_64/include/QtCore -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include newwindow.h -o debug\moc_newwindow.cpp
-
-compiler_moc_objc_header_make_all:
-compiler_moc_objc_header_clean:
-compiler_moc_source_make_all:
-compiler_moc_source_clean:
-compiler_uic_make_all: ui_dialog.h ui_mainwindow.h ui_newwindow.h
-compiler_uic_clean:
-	-$(DEL_FILE) ui_dialog.h ui_mainwindow.h ui_newwindow.h
-ui_dialog.h: dialog.ui \
-		../../../QTcra/6.5.1/mingw_64/bin/uic.exe
-	D:\QTcra\6.5.1\mingw_64\bin\uic.exe dialog.ui -o ui_dialog.h
-
-ui_mainwindow.h: mainwindow.ui \
-		../../../QTcra/6.5.1/mingw_64/bin/uic.exe
-	D:\QTcra\6.5.1\mingw_64\bin\uic.exe mainwindow.ui -o ui_mainwindow.h
-
-ui_newwindow.h: newwindow.ui \
-		../../../QTcra/6.5.1/mingw_64/bin/uic.exe
-	D:\QTcra\6.5.1\mingw_64\bin\uic.exe newwindow.ui -o ui_newwindow.h
-
-compiler_yacc_decl_make_all:
-compiler_yacc_decl_clean:
-compiler_yacc_impl_make_all:
-compiler_yacc_impl_clean:
-compiler_lex_make_all:
-compiler_lex_clean:
-compiler_clean: compiler_lrelease_clean compiler_rcc_clean compiler_moc_predefs_clean compiler_moc_header_clean compiler_uic_clean 
-
-
-
-####### Compile
-
-debug/dialog.o: dialog.cpp dialog.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/QDialog \
 		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qdialog.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtGui/qtguiglobal.h \
@@ -1205,7 +1016,273 @@ debug/dialog.o: dialog.cpp dialog.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtCore/QSizeF \
 		../../../QTcra/6.5.1/mingw_64/include/QtGui/QTransform \
 		../../../QTcra/6.5.1/mingw_64/include/QtCore/qnativeinterface.h \
-		ui_dialog.h
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qstackedwidget.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qframe.h \
+		tshop.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/QMainWindow \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qmainwindow.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qtabwidget.h \
+		tdiocese.h \
+		tparish.h \
+		tpriest.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/QString \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/QFile \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qfile.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qfiledevice.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/QVector \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qvector.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/QTextStream \
+		debug/moc_predefs.h \
+		../../../QTcra/6.5.1/mingw_64/bin/moc.exe
+	D:\QTcra\6.5.1\mingw_64\bin\moc.exe $(DEFINES) --include "D:/moje dokumenty/GitHub/Diocese-Management-QT-app/debug/moc_predefs.h" -ID:/QTcra/6.5.1/mingw_64/mkspecs/win32-g++ -I"D:/moje dokumenty/GitHub/Diocese-Management-QT-app" -ID:/QTcra/6.5.1/mingw_64/include -ID:/QTcra/6.5.1/mingw_64/include/QtQuick -ID:/QTcra/6.5.1/mingw_64/include/QtOpenGL -ID:/QTcra/6.5.1/mingw_64/include/QtMultimedia -ID:/QTcra/6.5.1/mingw_64/include/QtWidgets -ID:/QTcra/6.5.1/mingw_64/include/QtGui -ID:/QTcra/6.5.1/mingw_64/include/QtQmlModels -ID:/QTcra/6.5.1/mingw_64/include/QtQml -ID:/QTcra/6.5.1/mingw_64/include/QtQmlIntegration -ID:/QTcra/6.5.1/mingw_64/include/QtNetwork -ID:/QTcra/6.5.1/mingw_64/include/QtCore -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include newwindow.h -o debug\moc_newwindow.cpp
+
+compiler_moc_objc_header_make_all:
+compiler_moc_objc_header_clean:
+compiler_moc_source_make_all:
+compiler_moc_source_clean:
+compiler_uic_make_all: ui_dialog.h ui_mainwindow.h ui_newwindow.h
+compiler_uic_clean:
+	-$(DEL_FILE) ui_dialog.h ui_mainwindow.h ui_newwindow.h
+ui_dialog.h: dialog.ui \
+		../../../QTcra/6.5.1/mingw_64/bin/uic.exe
+	D:\QTcra\6.5.1\mingw_64\bin\uic.exe dialog.ui -o ui_dialog.h
+
+ui_mainwindow.h: mainwindow.ui \
+		../../../QTcra/6.5.1/mingw_64/bin/uic.exe
+	D:\QTcra\6.5.1\mingw_64\bin\uic.exe mainwindow.ui -o ui_mainwindow.h
+
+ui_newwindow.h: newwindow.ui \
+		../../../QTcra/6.5.1/mingw_64/bin/uic.exe
+	D:\QTcra\6.5.1\mingw_64\bin\uic.exe newwindow.ui -o ui_newwindow.h
+
+compiler_yacc_decl_make_all:
+compiler_yacc_decl_clean:
+compiler_yacc_impl_make_all:
+compiler_yacc_impl_clean:
+compiler_lex_make_all:
+compiler_lex_clean:
+compiler_clean: compiler_lrelease_clean compiler_rcc_clean compiler_moc_predefs_clean compiler_moc_header_clean compiler_uic_clean 
+
+
+
+####### Compile
+
+debug/dialog.o: dialog.cpp dialog.h \
+		newwindow.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qdialog.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qtguiglobal.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qglobal.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qtversionchecks.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qconfig.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qtcore-config.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qtconfigmacros.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qtcoreexports.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qtpreprocessorsupport.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qtnoop.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qsystemdetection.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qprocessordetection.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qcompilerdetection.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qassert.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qtypes.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qtclasshelpermacros.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qtversion.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qtypeinfo.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qcontainerfwd.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qsysinfo.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qlogging.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qflags.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qcompare_impl.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qatomic.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qbasicatomic.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qatomic_cxx11.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qgenericatomic.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qconstructormacros.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qdarwinhelpers.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qexceptionhandling.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qforeach.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qtdeprecationmarkers.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qttypetraits.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qfunctionpointer.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qglobalstatic.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qmalloc.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qminmax.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qnumeric.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qoverload.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qswap.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qtenvironmentvariables.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qtresource.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qttranslation.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qversiontagging.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qtgui-config.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qtguiexports.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qtwidgets-config.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qtwidgetsexports.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qwidget.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qwindowdefs.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qobjectdefs.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qnamespace.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qtmetamacros.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qobjectdefs_impl.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qwindowdefs_win.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qobject.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qstring.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qchar.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qstringview.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qbytearray.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qrefcount.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qarraydata.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qpair.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qarraydatapointer.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qarraydataops.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qcontainertools_impl.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qxptype_traits.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qbytearrayalgorithms.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qbytearrayview.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qstringfwd.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/q20type_traits.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qstringliteral.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qstringalgorithms.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qanystringview.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qutf8stringview.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qstringtokenizer.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qstringbuilder.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qlist.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qhashfunctions.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qiterator.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qbytearraylist.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qstringlist.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qalgorithms.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qstringmatcher.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qcoreevent.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qscopedpointer.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qmetatype.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qcompare.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qdatastream.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qiodevicebase.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qfloat16.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qmath.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qiterable.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qmetacontainer.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qcontainerinfo.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qtaggedpointer.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qscopeguard.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qobject_impl.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qbindingstorage.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qmargins.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qaction.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qkeysequence.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qicon.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qsize.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qpixmap.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qpaintdevice.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qrect.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qpoint.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qcolor.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qrgb.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qrgba64.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qsharedpointer.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qshareddata.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qsharedpointer_impl.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qimage.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qpixelformat.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qtransform.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qpolygon.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qregion.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qline.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qvariant.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qdebug.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qtextstream.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qstringconverter_base.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qcontiguouscache.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qmap.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qshareddata_impl.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qset.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qhash.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qvarlengtharray.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/q20memory.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qpalette.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qbrush.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qfont.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qfontmetrics.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qfontinfo.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qsizepolicy.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qcursor.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qbitmap.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qevent.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qiodevice.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qpointer.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qurl.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qeventpoint.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qvector2d.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qvectornd.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qpointingdevice.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qinputdevice.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qscreen.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/QList \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/QObject \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/QRect \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/QSize \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/QSizeF \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/QTransform \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qnativeinterface.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qstackedwidget.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qframe.h \
+		tshop.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/QMainWindow \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qmainwindow.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qtabwidget.h \
+		tdiocese.h \
+		tparish.h \
+		tpriest.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/QString \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/QFile \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qfile.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qfiledevice.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/QVector \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qvector.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/QTextStream \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/QDialog \
+		ui_dialog.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/QVariant \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/QAbstractButton \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qabstractbutton.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/QApplication \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qapplication.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qcoreapplication.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qeventloop.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qcoreapplication_platform.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qfuture.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qfutureinterface.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qmutex.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qtsan_impl.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qresultstore.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qfuture_impl.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qthreadpool.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qthread.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qdeadlinetimer.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qelapsedtimer.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qrunnable.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qexception.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qpromise.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qguiapplication.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qinputmethod.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/qlocale.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qguiapplication_platform.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/QDialogButtonBox \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/QLabel \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qlabel.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qpicture.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qtextdocument.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/QLineEdit \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qlineedit.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qtextcursor.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qtextformat.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qpen.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qtextoption.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/QStackedWidget \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\dialog.o dialog.cpp
 
 debug/main.o: main.cpp mainwindow.h \
@@ -1380,6 +1457,7 @@ debug/main.o: main.cpp mainwindow.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtCore/qvector.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtCore/QTextStream \
 		newwindow.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qdialog.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qstackedwidget.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qframe.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtMultimedia/QtMultimedia \
@@ -1877,6 +1955,7 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtCore/qvector.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtCore/QTextStream \
 		newwindow.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qdialog.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qstackedwidget.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qframe.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtMultimedia/QtMultimedia \
@@ -2216,7 +2295,7 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\mainwindow.o mainwindow.cpp
 
 debug/newwindow.o: newwindow.cpp newwindow.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qstackedwidget.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qdialog.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtGui/qtguiglobal.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtCore/qglobal.h \
@@ -2265,7 +2344,6 @@ debug/newwindow.o: newwindow.cpp newwindow.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtGui/qtguiexports.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qtwidgets-config.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qtwidgetsexports.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qframe.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qwidget.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtGui/qwindowdefs.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtCore/qobjectdefs.h \
@@ -2374,6 +2452,8 @@ debug/newwindow.o: newwindow.cpp newwindow.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtCore/QSizeF \
 		../../../QTcra/6.5.1/mingw_64/include/QtGui/QTransform \
 		../../../QTcra/6.5.1/mingw_64/include/QtCore/qnativeinterface.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qstackedwidget.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qframe.h \
 		tshop.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/QMainWindow \
 		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qmainwindow.h \
@@ -2388,10 +2468,12 @@ debug/newwindow.o: newwindow.cpp newwindow.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtCore/QVector \
 		../../../QTcra/6.5.1/mingw_64/include/QtCore/qvector.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtCore/QTextStream \
-		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qdialog.h \
-		ui_newwindow.h \
+		dialog.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/QDialog \
+		ui_dialog.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtCore/QVariant \
-		../../../QTcra/6.5.1/mingw_64/include/QtGui/QAction \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/QAbstractButton \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qabstractbutton.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/QApplication \
 		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qapplication.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtCore/qcoreapplication.h \
@@ -2414,6 +2496,22 @@ debug/newwindow.o: newwindow.cpp newwindow.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtGui/qinputmethod.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtCore/qlocale.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtGui/qguiapplication_platform.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/QDialogButtonBox \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/QLabel \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qlabel.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qpicture.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qtextdocument.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/QLineEdit \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qlineedit.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qtextcursor.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qtextformat.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qpen.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/qtextoption.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/QStackedWidget \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/QWidget \
+		ui_newwindow.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtGui/QAction \
 		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/QComboBox \
 		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qcombobox.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
@@ -2427,24 +2525,19 @@ debug/newwindow.o: newwindow.cpp newwindow.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qtabbar.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qrubberband.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtCore/qabstractitemmodel.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/QLabel \
-		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qlabel.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtGui/qpicture.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtGui/qtextdocument.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/QListView \
 		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qlistview.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qabstractitemview.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qabstractscrollarea.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtCore/qitemselectionmodel.h \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/QMenu \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qmenu.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/QMenuBar \
 		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qmenubar.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qmenu.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/QPushButton \
 		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qpushbutton.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qabstractbutton.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/QStatusBar \
 		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qstatusbar.h \
-		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/QWidget \
 		../../../QTcra/6.5.1/mingw_64/include/QtGui/QPixmap \
 		../../../QTcra/6.5.1/mingw_64/include/QtGui/QPalette \
 		../../../QTcra/6.5.1/mingw_64/include/QtCore/QStringList \
@@ -2453,7 +2546,9 @@ debug/newwindow.o: newwindow.cpp newwindow.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtCore/QStringListModel \
 		../../../QTcra/6.5.1/mingw_64/include/QtCore/qstringlistmodel.h \
 		../../../QTcra/6.5.1/mingw_64/include/QtCore/QDataStream \
-		../../../QTcra/6.5.1/mingw_64/include/QtCore/QRegularExpression
+		../../../QTcra/6.5.1/mingw_64/include/QtCore/QRegularExpression \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/QListWidgetItem \
+		../../../QTcra/6.5.1/mingw_64/include/QtWidgets/qlistwidget.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\newwindow.o newwindow.cpp
 
 debug/tdiocese.o: tdiocese.cpp tdiocese.h \

@@ -17,6 +17,7 @@
 #include <QRegularExpression>
 #include <QListWidgetItem>
 #include <QListView>
+#include <QMessageBox>
 
 NewWindow::NewWindow(QWidget* parent)
     : QMainWindow(parent)
@@ -306,6 +307,8 @@ void NewWindow::on_ButtonBuy_clicked()
         }
         else
         {
+
+            QMessageBox::warning(this,tr("ERROR"),tr("Parish cannot afford this item!"));
             qDebug() << "Parish cannot afford this item!";
         }
     }
@@ -317,6 +320,10 @@ void NewWindow::updateItemView(int index)
     TParish* parish = nullptr;
     parish = &mdiocese->parishes[index];
     QString parishbudget = QString::number(parish->getBudget());
+    QString parishName = QString::fromStdString(parish->getParishName());
+    ui->LabelParishName->setText(parishName);
+    QString styledText = "<span style=\"font-size: 24pt; font-weight: bold; text-transform: uppercase;\">" + parishName + "</span>";
+    ui->LabelParishName->setText(styledText);
     ui->LabelMoney->setText(parishbudget + "zł");
 
         // Wyczyszczenie listy przedmiotów parafii
@@ -324,6 +331,12 @@ void NewWindow::updateItemView(int index)
 
     // Wczytanie przedmiotów z pliku dla danej parafii
     QString fileName = QString("parish%1Items.txt").arg(index + 1);
+    QString fileNamePhoto = QString(":/new/prefix1/pictrues/Church%1.png").arg(index + 1);
+    QPixmap pixmap(fileNamePhoto);
+    QPixmap scaledPixmap = pixmap.scaled(ui->ParishPhoto->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    // Ustaw wczytany i dopasowany obrazek jako zawartość QLabel
+    ui->ParishPhoto->setPixmap(scaledPixmap);
+    ui->ParishPhoto->setScaledContents(true);
     loadItemsFromFile(parish, fileName);
 
     std::vector<TShop> items = parish->getItems();
