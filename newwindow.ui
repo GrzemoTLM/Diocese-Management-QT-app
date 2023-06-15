@@ -27,7 +27,7 @@
      <string>TextLabel</string>
     </property>
    </widget>
-   <widget class="QListView" name="listView">
+   <widget class="QListView" name="ListPriests">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -247,10 +247,22 @@
      <height>24</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuParishes">
+    <property name="title">
+     <string>Parishes</string>
+    </property>
+    <addaction name="actionCreate_new_parish"/>
+   </widget>
+   <addaction name="menuParishes"/>
   </widget>
   <action name="actionDodaj_Parafie">
    <property name="text">
     <string>Create New Parish</string>
+   </property>
+  </action>
+  <action name="actionCreate_new_parish">
+   <property name="text">
+    <string>Create new parish</string>
    </property>
   </action>
  </widget>

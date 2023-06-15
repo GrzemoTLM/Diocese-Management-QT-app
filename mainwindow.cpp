@@ -5,8 +5,8 @@
 #include "tshop.h"
 #include <QPixmap>
 #include <string>
-
-
+#include <QtMultimedia>
+#include <QSoundEffect>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -18,6 +18,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->welcomelabel->setStyleSheet("font-size: 48px; font-family: Impact;");
     QPixmap obrazek1(":/new/prefix1/pictrues/Piesel.jpg");
     ui->welcomelabel2->setPixmap(obrazek1.scaled(ui->welcomelabel2->size(),Qt::KeepAspectRatio, Qt::SmoothTransformation));
+    connect(ui->radioButton, &QRadioButton::clicked, this, &MainWindow::on_radioButton_clicked);
 }
 void MainWindow::setDiocese(TDiocese* diocese)
 {
@@ -39,4 +40,17 @@ void MainWindow::on_buttonBegin_clicked()
 {
    newWindow.show();
 }
+
+
+void MainWindow::on_radioButton_clicked()
+{
+   QMediaPlayer* player = new QMediaPlayer();
+   QUrl url = QUrl("qrc:/music/chants.mp3");
+   player->setSource(url);
+   player->play();
+
+}
+
+
+
 

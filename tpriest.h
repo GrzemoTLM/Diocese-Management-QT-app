@@ -13,7 +13,7 @@ public:
     TPriest(const std::string& firstName, const std::string& lastName, const std::string& position);
     std::string getFirstName() const;
     std::string getLastName() const;
-    std::string getPosition() const;
+    std::string getposition() const;
 
 
 private:

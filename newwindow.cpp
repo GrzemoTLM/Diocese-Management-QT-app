@@ -1,4 +1,7 @@
 #include "newwindow.h"
+#include "dialog.h"
+#include "qdialog.h"
+#include "ui_dialog.h"
 #include "ui_newwindow.h"
 #include "tshop.h"
 #include "tparish.h"
@@ -12,6 +15,8 @@
 #include <QStringListModel>
 #include <QDataStream>
 #include <QRegularExpression>
+#include <QListWidgetItem>
+#include <QListView>
 
 NewWindow::NewWindow(QWidget* parent)
     : QMainWindow(parent)
@@ -69,6 +74,7 @@ NewWindow::NewWindow(QWidget* parent)
     // parafii
     connect(ui->comboBoxParish, SIGNAL(currentIndexChanged(int)), this, SLOT(updateItemView(int)));
     //
+
 }
 void NewWindow::setDiocese(TDiocese* diocese)
 {
@@ -80,6 +86,48 @@ void NewWindow::setDiocese(TDiocese* diocese)
         ui->comboBoxParish->addItem(parishName);
     }
 }
+void NewWindow::on_comboBoxShop_currentIndexChanged(int index)
+{
+    // Add your implementation here
+    // This function will be called when the current index of the comboBoxShop changes
+}
+void NewWindow::loadPriestsForParishes()
+{
+    for (int i = 0; i < mdiocese->parishes.size(); ++i)
+    {
+        QString fileName = QString("parish%1.txt").arg(i + 1);
+        TParish& parish = mdiocese->parishes[i];
+
+        QFile file(fileName);
+        if (file.open(QIODevice::ReadOnly | QIODevice::Text))
+        {
+            QTextStream in(&file);
+            while (!in.atEnd())
+            {
+                QString line = in.readLine();
+                QStringList parts = line.split(",");
+                if (parts.size() == 3) // Dodatkowy warunek dla trzech części (imię, nazwisko, rola)
+                {
+                    QString firstName = parts[0].trimmed();
+                    QString lastName = parts[1].trimmed();
+                    QString role = parts[2].trimmed();
+
+                    // Utwórz obiekt księdza i dodaj go do parafii
+                    TPriest priest(firstName.toStdString(), lastName.toStdString(), role.toStdString());
+                    parish.addPriest(priest);
+                }
+            }
+
+            file.close();
+        }
+        else
+        {
+            // Obsługa błędu otwarcia pliku
+            qDebug() << "Nie można otworzyć pliku:" << fileName;
+        }
+    }
+}
+
 void NewWindow::loadItemsFromFile(TParish* parish, const QString& fileName)
 {
     QFile file(fileName);
@@ -99,6 +147,42 @@ void NewWindow::loadItemsFromFile(TParish* parish, const QString& fileName)
         file.close();
     }
 }
+void NewWindow::addPriestsToList()
+{
+    // Pobranie aktualnie wybranej parafii
+    QString selectedParish = ui->comboBoxParish->currentText();
+
+    // Wyszukanie obiektu parafii na podstawie wybranej nazwy
+    TParish* parish = nullptr;
+    for (TParish& p : mdiocese->parishes)
+    {
+        if (p.getParishName() == selectedParish.toStdString())
+        {
+            parish = &p;
+            break;
+        }
+    }
+
+    // Jeśli znaleziono parafię, dodaj księży do listy ListPriests
+    if (parish)
+    {
+        QStringList priestsList;
+        for (const TPriest& priest : parish->getPriests())
+        {
+            QString priestName = QString::fromStdString(priest.getFirstName() + " " + priest.getLastName());
+            QString priestPosition = QString::fromStdString(priest.getposition());
+            QString priestInfo = priestName + " - " + priestPosition;
+            priestsList << priestInfo;
+        }
+
+        // Aktualizacja modelu i przypisanie go do listy ListPriests
+        QStringListModel* model = new QStringListModel(priestsList, this);
+        ui->ListPriests->setModel(model);
+    }
+}
+
+
+
 
 void NewWindow::on_ButtonBuy_clicked()
 {
@@ -205,9 +289,10 @@ void NewWindow::updateItemView(int index)
     TParish* parish = nullptr;
     parish = &mdiocese->parishes[index];
     QString parishbudget = QString::number(parish->getBudget());
-    ui->LabelMoney->setText(parishbudget+"zł");
-    // Wyczyszczenie listy przedmiotów parafii
-    parish->clearItems();
+    ui->LabelMoney->setText(parishbudget + "zł");
+
+        // Wyczyszczenie listy przedmiotów parafii
+        parish->clearItems();
 
     // Wczytanie przedmiotów z pliku dla danej parafii
     QString fileName = QString("parish%1Items.txt").arg(index + 1);
@@ -222,7 +307,32 @@ void NewWindow::updateItemView(int index)
     }
     model->setStringList(itemList);
     ui->listViewItems->setModel(model);
+
+    // Aktualizacja listy księży dla wybranej parafii
+    addPriestsToList();
 }
+
+void NewWindow::on_ButtonAddPriest_clicked()
+{
+    // Pobierz nazwę pliku z wybranego elementu w QComboBox
+    QString selectedParish = ui->comboBoxParish->currentText();
+    int parishIndex = ui->comboBoxParish->currentIndex() + 1; // Indeks + 1 daje numer parafii
+    QString fileName = QString("parish%1.txt").arg(parishIndex);
+
+    // Tworzenie i konfigurowanie obiektu dialogowego
+    Dialog dialog(fileName, this);
+    dialog.setWindowTitle("Add Priest");
+
+    // Ustawienie indeksu 0 dla stacked widget w oknie dialogowym
+    dialog.ui->stackedWidget->setCurrentIndex(0);
+
+    // Wyświetlanie okna dialogowego w trybie modalnym
+    dialog.exec();
+
+    // Po zakończeniu dialogu można wykonać odpowiednie czynności, np. odświeżenie widoku itp.
+}
+
+
 NewWindow::~NewWindow()
 {
     QFile file("parishes.txt");
@@ -270,5 +380,4 @@ NewWindow::~NewWindow()
 
     delete ui;
 }
-
 

@@ -16,6 +16,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QListView>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
@@ -27,9 +28,10 @@ class Ui_NewWindow
 {
 public:
     QAction *actionDodaj_Parafie;
+    QAction *actionCreate_new_parish;
     QWidget *centralwidget;
     QLabel *LabelComboBox;
-    QListView *listView;
+    QListView *ListPriests;
     QLabel *LabelPriests;
     QPushButton *ButtonAddPriest;
     QPushButton *ButtonDeletePriest;
@@ -48,6 +50,7 @@ public:
     QComboBox *comboBoxParish;
     QStatusBar *statusbar;
     QMenuBar *menuBar;
+    QMenu *menuParishes;
 
     void setupUi(QMainWindow *NewWindow)
     {
@@ -56,14 +59,16 @@ public:
         NewWindow->resize(936, 720);
         actionDodaj_Parafie = new QAction(NewWindow);
         actionDodaj_Parafie->setObjectName("actionDodaj_Parafie");
+        actionCreate_new_parish = new QAction(NewWindow);
+        actionCreate_new_parish->setObjectName("actionCreate_new_parish");
         centralwidget = new QWidget(NewWindow);
         centralwidget->setObjectName("centralwidget");
         LabelComboBox = new QLabel(centralwidget);
         LabelComboBox->setObjectName("LabelComboBox");
         LabelComboBox->setGeometry(QRect(110, 20, 251, 41));
-        listView = new QListView(centralwidget);
-        listView->setObjectName("listView");
-        listView->setGeometry(QRect(20, 290, 351, 291));
+        ListPriests = new QListView(centralwidget);
+        ListPriests->setObjectName("ListPriests");
+        ListPriests->setGeometry(QRect(20, 290, 351, 291));
         LabelPriests = new QLabel(centralwidget);
         LabelPriests->setObjectName("LabelPriests");
         LabelPriests->setGeometry(QRect(160, 240, 56, 19));
@@ -119,7 +124,12 @@ public:
         menuBar = new QMenuBar(NewWindow);
         menuBar->setObjectName("menuBar");
         menuBar->setGeometry(QRect(0, 0, 936, 24));
+        menuParishes = new QMenu(menuBar);
+        menuParishes->setObjectName("menuParishes");
         NewWindow->setMenuBar(menuBar);
+
+        menuBar->addAction(menuParishes->menuAction());
+        menuParishes->addAction(actionCreate_new_parish);
 
         retranslateUi(NewWindow);
 
@@ -130,6 +140,7 @@ public:
     {
         NewWindow->setWindowTitle(QCoreApplication::translate("NewWindow", "MainWindow", nullptr));
         actionDodaj_Parafie->setText(QCoreApplication::translate("NewWindow", "Create New Parish", nullptr));
+        actionCreate_new_parish->setText(QCoreApplication::translate("NewWindow", "Create new parish", nullptr));
         LabelComboBox->setText(QCoreApplication::translate("NewWindow", "TextLabel", nullptr));
         LabelPriests->setText(QCoreApplication::translate("NewWindow", "TextLabel", nullptr));
         ButtonAddPriest->setText(QCoreApplication::translate("NewWindow", "Add Priest", nullptr));
@@ -144,6 +155,7 @@ public:
         LabelMoney->setText(QCoreApplication::translate("NewWindow", "$", nullptr));
         LabelShopPic->setText(QCoreApplication::translate("NewWindow", "TextLabel", nullptr));
         label_2->setText(QCoreApplication::translate("NewWindow", "TextLabel", nullptr));
+        menuParishes->setTitle(QCoreApplication::translate("NewWindow", "Parishes", nullptr));
     } // retranslateUi
 
 };

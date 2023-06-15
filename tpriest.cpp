@@ -22,7 +22,7 @@ std::string TPriest::getLastName() const
     return lastName;
 }
 
-std::string TPriest::getPosition() const
+std::string TPriest::getposition() const
 {
     return position;
 }

@@ -1,5 +1,7 @@
 #ifndef NEWWINDOW_H
 #define NEWWINDOW_H
+#include "qdialog.h"
+#include "qstackedwidget.h"
 #include "tshop.h"
 #include <vector>
 #include <QMainWindow>
@@ -15,6 +17,7 @@ class NewWindow : public QMainWindow
 public:
      explicit NewWindow(QWidget *parent = nullptr);
     void setDiocese(TDiocese* diocese);
+      void loadPriestsForParishes();
     ~NewWindow();
 
 private slots:
@@ -26,10 +29,20 @@ private slots:
 
     void updateItemView(int index);
 
+    void on_ButtonAddPriest_clicked();
+
+    void on_accept_clicked();
+
+    void addPriestsToList();
+
+
 private:
     Ui::NewWindow *ui;
     TDiocese* mdiocese;
     std::vector<TShop> shopItems;
+    QStackedWidget* stackedWidget;
+    QDialog dialog;
+
 
 
 };

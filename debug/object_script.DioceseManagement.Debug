@@ -1,3 +1,4 @@
+debug/dialog.o
 debug/main.o
 debug/mainwindow.o
 debug/newwindow.o
@@ -6,6 +7,8 @@ debug/tparish.o
 debug/tpriest.o
 debug/tshop.o
 debug/qrc_Pictures.o
+debug/qrc_music.o
 debug/qrc_qmake_qmake_qm_files.o
+debug/moc_dialog.o
 debug/moc_mainwindow.o
 debug/moc_newwindow.o
