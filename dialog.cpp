@@ -8,7 +8,10 @@ Dialog::Dialog(const QString& fileName, QWidget* parent) :
     NameFile(fileName)
 {
     ui->setupUi(this);
-
+    QPixmap background(":/new/prefix1/pictrues/back3.jpg");
+    QPalette palette;
+    palette.setBrush(QPalette::Window, background.scaled(this->size(), Qt::IgnoreAspectRatio));
+    this->setPalette(palette);
     // Tutaj możesz użyć wartości fileName do odpowiednich operacji
 }
 

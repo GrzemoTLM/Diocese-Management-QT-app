@@ -43,7 +43,10 @@ NewWindow::NewWindow(QWidget* parent)
         }
         file.close();
     }
-
+    QPixmap background(":/new/prefix1/pictrues/back3.jpg");
+    QPalette palette;
+    palette.setBrush(QPalette::Window, background.scaled(this->size(), Qt::IgnoreAspectRatio));
+    this->setPalette(palette);
     // Dodawanie obiektów TShop do ComboBoxShop
     for (const TShop& item : shopItems)
     {
@@ -56,18 +59,17 @@ NewWindow::NewWindow(QWidget* parent)
     }
 
     ui->LabelComboBox->setText("Choose parish to manage");
-    ui->LabelComboBox->setStyleSheet("font-size: 22px; font-family: Calibri;");
-    ui->LabelMoney->setStyleSheet("font-size: 22px; font-family: Calibri;");
+    ui->LabelComboBox->setStyleSheet("font-size: 22px;");
+    ui->LabelMoney->setStyleSheet("font-size: 22px;");
     ui->LabelPriests->setText("Priests");
-    ui->LabelPriests->setStyleSheet("font-size: 22px; font-family: Calibri;");
+    ui->LabelPriests->setStyleSheet("font-size: 22px;");
     ui->LabelBudget->setStyleSheet(
-        "background-color: grey; border: 1px solid black; font-size: 22px; "
-        "font-family: Calibri;");
+        "background-color: grey; border: 1px solid black; font-size: 22px;");
     ui->LabelBudget->setText("Budget");
     ui->LabelShop->setText("Diocesian Shop");
-    ui->LabelShop->setStyleSheet("font-size: 22px; font-family: Calibri;");
+    ui->LabelShop->setStyleSheet("font-size: 22px;");
     ui->LabelEQ->setText("Parish Inventory");
-    ui->LabelEQ->setStyleSheet("font-size: 22px; font-family: Calibri;");
+    ui->LabelEQ->setStyleSheet("font-size: 22px;");
     QPixmap obrazek2(":/new/prefix1/pictrues/shoplogo.png");
     ui->LabelShopPic->setPixmap(
         obrazek2.scaled(ui->LabelShopPic->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));

@@ -19,7 +19,7 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>251</width>
+      <width>311</width>
       <height>41</height>
      </rect>
     </property>
@@ -55,7 +55,7 @@
      <rect>
       <x>20</x>
       <y>600</y>
-      <width>101</width>
+      <width>111</width>
       <height>27</height>
      </rect>
     </property>
@@ -68,7 +68,7 @@
      <rect>
       <x>140</x>
       <y>600</y>
-      <width>101</width>
+      <width>111</width>
       <height>27</height>
      </rect>
     </property>
@@ -81,7 +81,7 @@
      <rect>
       <x>260</x>
       <y>600</y>
-      <width>101</width>
+      <width>111</width>
       <height>27</height>
      </rect>
     </property>
@@ -102,10 +102,10 @@
    <widget class="QLabel" name="LabelParishName">
     <property name="geometry">
      <rect>
-      <x>70</x>
+      <x>30</x>
       <y>80</y>
-      <width>461</width>
-      <height>121</height>
+      <width>581</width>
+      <height>131</height>
      </rect>
     </property>
     <property name="text">
@@ -216,9 +216,9 @@
    <widget class="QComboBox" name="comboBoxParish">
     <property name="geometry">
      <rect>
-      <x>330</x>
+      <x>360</x>
       <y>20</y>
-      <width>281</width>
+      <width>271</width>
       <height>24</height>
      </rect>
     </property>

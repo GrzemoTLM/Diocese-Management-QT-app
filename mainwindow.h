@@ -4,6 +4,8 @@
 #include "tdiocese.h"
 #include "newwindow.h"
 #include <QtMultimedia>
+#include <QAudio>
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -26,9 +28,15 @@ private slots:
 
     void on_radioButton_clicked();
 
+    void on_radioButton_released();
+
+    void on_radioButton_clicked(bool checked);
+
 private:
     Ui::MainWindow *ui;
     TDiocese* m_diocese;
+    QMediaPlayer *Player;
+    QAudioOutput *audioOutput;
 
 };
 #endif // MAINWINDOW_H

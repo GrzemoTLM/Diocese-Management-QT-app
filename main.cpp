@@ -11,6 +11,7 @@
 #include <fstream>
 #include <QDebug>
 #include <QtMultimedia>
+#include <QFontDatabase>
 
 int main(int argc, char *argv[])
 {
@@ -30,10 +31,16 @@ int main(int argc, char *argv[])
             break;
         }
     }
-// ------------------------------------------------------------
-
-
+    int fontId = QFontDatabase::addApplicationFont(":/new/prefix1/fonts/OldLondon.ttf");
+    int fontId2 = QFontDatabase::addApplicationFont(":/new/prefix1/fonts/Seagram tfb.ttf");
+    if (fontId != -1)
+    {
+        QString fontName = QFontDatabase::applicationFontFamilies(fontId2).at(0);
+        QFont font(fontName);
+        a.setFont(font);
+    }
     MainWindow w;
+    w.show();
     w.setDiocese(&diocese);
     w.newWindow.setDiocese(&diocese);
     w.newWindow.loadPriestsForParishes();

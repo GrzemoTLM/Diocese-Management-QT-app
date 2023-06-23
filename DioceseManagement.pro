@@ -1,6 +1,7 @@
 QT       += core gui \
     quick
 QT += multimedia
+
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++17
@@ -27,7 +28,8 @@ HEADERS += \
     tdiocese.h \
     tparish.h \
     tpriest.h \
-    tshop.h
+    tshop.h \
+    :/new/prefix1/fonts/OldLondon.ttf \
 
 FORMS += \
     dialog.ui \
@@ -46,6 +48,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     Pictures.qrc \
+    fonts.qrc \
     music.qrc
 
 DISTFILES += \
