@@ -237,9 +237,9 @@ Makefile: DioceseManagement.pro ../../../QTcra/6.5.1/mingw_64/mkspecs/win32-g++/
 		../../../QTcra/6.5.1/mingw_64/lib/Qt6Core.prl \
 		../../../QTcra/6.5.1/mingw_64/lib/Qt6EntryPoint.prl \
 		../../../QTcra/6.5.1/mingw_64/mkspecs/features/build_pass.prf \
-		Pictures.qrc \
 		fonts.qrc \
 		music.qrc \
+		textfiles.qrc \
 		debug/qmake_qmake_qm_files.qrc \
 		release/qmake_qmake_qm_files.qrc
 	$(QMAKE) -o Makefile DioceseManagement.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
@@ -410,9 +410,9 @@ DioceseManagement.pro:
 ../../../QTcra/6.5.1/mingw_64/lib/Qt6Core.prl:
 ../../../QTcra/6.5.1/mingw_64/lib/Qt6EntryPoint.prl:
 ../../../QTcra/6.5.1/mingw_64/mkspecs/features/build_pass.prf:
-Pictures.qrc:
 fonts.qrc:
 music.qrc:
+textfiles.qrc:
 debug/qmake_qmake_qm_files.qrc:
 release/qmake_qmake_qm_files.qrc:
 qmake: FORCE

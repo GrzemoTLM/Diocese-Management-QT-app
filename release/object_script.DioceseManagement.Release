@@ -6,9 +6,9 @@ release/tdiocese.o
 release/tparish.o
 release/tpriest.o
 release/tshop.o
-release/qrc_Pictures.o
 release/qrc_fonts.o
 release/qrc_music.o
+release/qrc_textfiles.o
 release/qrc_qmake_qmake_qm_files.o
 release/moc_dialog.o
 release/moc_mainwindow.o

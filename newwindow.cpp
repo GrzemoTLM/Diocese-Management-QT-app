@@ -70,7 +70,7 @@ NewWindow::NewWindow(QWidget* parent)
     ui->LabelShop->setStyleSheet("font-size: 22px;");
     ui->LabelEQ->setText("Parish Inventory");
     ui->LabelEQ->setStyleSheet("font-size: 22px;");
-    QPixmap obrazek2(":/new/prefix1/pictrues/shoplogo.png");
+    QPixmap obrazek2("./pictrues/shoplogo.png");
     ui->LabelShopPic->setPixmap(
         obrazek2.scaled(ui->LabelShopPic->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
     // syngał odpowiedzialny za aktualizowanie list przemdiotów dla wybranej
@@ -98,7 +98,7 @@ void NewWindow::loadPriestsForParishes()
 {
     for (int i = 0; i < mdiocese->parishes.size(); ++i)
     {
-        QString fileName = QString("parish%1.txt").arg(i + 1);
+        QString fileName = QString(":/new/prefix3/parish%1.txt").arg(i + 1);
         TParish& parish = mdiocese->parishes[i];
 
         QFile file(fileName);
@@ -333,7 +333,7 @@ void NewWindow::updateItemView(int index)
 
     // Wczytanie przedmiotów z pliku dla danej parafii
     QString fileName = QString("parish%1Items.txt").arg(index + 1);
-    QString fileNamePhoto = QString(":/new/prefix1/pictrues/Church%1.png").arg(index + 1);
+    QString fileNamePhoto = QString("./pictrues/Church%1.png").arg(index + 1);
     QPixmap pixmap(fileNamePhoto);
     QPixmap scaledPixmap = pixmap.scaled(ui->ParishPhoto->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation);
     // Ustaw wczytany i dopasowany obrazek jako zawartość QLabel
