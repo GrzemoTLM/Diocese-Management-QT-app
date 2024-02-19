@@ -55,4 +55,11 @@ DISTFILES += \
     items.csv \
     music/chants.mp3 \
     parish1 \
-    parish1Items
+    parish1Items \
+    pictrues/Church1.png \
+    pictrues/Church2.png \
+    pictrues/Church3.png \
+    pictrues/Piesel.jpg \
+    pictrues/back3.jpg \
+    pictrues/note.png \
+    pictrues/shoplogo.png

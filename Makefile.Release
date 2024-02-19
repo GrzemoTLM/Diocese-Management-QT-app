@@ -83,7 +83,14 @@ OBJECTS       = release/dialog.o \
 DIST          = items.csv \
 		music/chants.mp3 \
 		parish1 \
-		parish1Items dialog.h \
+		parish1Items \
+		pictrues/Church1.png \
+		pictrues/Church2.png \
+		pictrues/Church3.png \
+		pictrues/Piesel.jpg \
+		pictrues/back3.jpg \
+		pictrues/note.png \
+		pictrues/shoplogo.png dialog.h \
 		mainwindow.h \
 		newwindow.h \
 		tdiocese.h \
@@ -157,14 +164,7 @@ release/qrc_Pictures.cpp: Pictures.qrc \
 		parish2.txt \
 		parish4.txt \
 		parish1.txt \
-		parish1Items.txt \
-		pictrues/Piesel.jpg \
-		pictrues/shoplogo.png \
-		pictrues/Church1.png \
-		pictrues/back3.jpg \
-		pictrues/note.png \
-		pictrues/Church2.png \
-		pictrues/Church3.png
+		parish1Items.txt
 	D:\QTcra\6.5.1\mingw_64\bin\rcc.exe -name Pictures --no-zstd Pictures.qrc -o release\qrc_Pictures.cpp
 
 release/qrc_fonts.cpp: fonts.qrc \

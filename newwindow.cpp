@@ -43,7 +43,7 @@ NewWindow::NewWindow(QWidget* parent)
         }
         file.close();
     }
-    QPixmap background(":/new/prefix1/pictrues/back3.jpg");
+    QPixmap background("./pictrues/back3.jpg");
     QPalette palette;
     palette.setBrush(QPalette::Window, background.scaled(this->size(), Qt::IgnoreAspectRatio));
     this->setPalette(palette);
