@@ -32,6 +32,8 @@ public:
     QPushButton *buttonStats;
     QPushButton *buttonCredits;
     QRadioButton *radioButton;
+    QLabel *LabelNote;
+    QLabel *welcomelabel_2;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -39,12 +41,12 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(952, 623);
+        MainWindow->resize(952, 649);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         welcomelabel = new QLabel(centralwidget);
         welcomelabel->setObjectName("welcomelabel");
-        welcomelabel->setGeometry(QRect(240, 40, 561, 161));
+        welcomelabel->setGeometry(QRect(110, 40, 731, 161));
         welcomelabel->setTextFormat(Qt::MarkdownText);
         welcomelabel->setScaledContents(false);
         welcomelabel2 = new QLabel(centralwidget);
@@ -55,16 +57,28 @@ public:
         welcomelabel3->setGeometry(QRect(630, 280, 351, 41));
         buttonBegin = new QPushButton(centralwidget);
         buttonBegin->setObjectName("buttonBegin");
-        buttonBegin->setGeometry(QRect(660, 370, 161, 41));
+        buttonBegin->setGeometry(QRect(640, 320, 191, 81));
+        buttonBegin->setStyleSheet(QString::fromUtf8("font: 26pt;"));
         buttonStats = new QPushButton(centralwidget);
         buttonStats->setObjectName("buttonStats");
-        buttonStats->setGeometry(QRect(660, 430, 161, 41));
+        buttonStats->setGeometry(QRect(640, 430, 191, 61));
+        buttonStats->setStyleSheet(QString::fromUtf8("font: 24pt;"));
         buttonCredits = new QPushButton(centralwidget);
         buttonCredits->setObjectName("buttonCredits");
-        buttonCredits->setGeometry(QRect(660, 490, 161, 41));
+        buttonCredits->setGeometry(QRect(640, 500, 191, 51));
+        buttonCredits->setStyleSheet(QString::fromUtf8("font: 26pt"));
         radioButton = new QRadioButton(centralwidget);
         radioButton->setObjectName("radioButton");
-        radioButton->setGeometry(QRect(60, 540, 141, 31));
+        radioButton->setGeometry(QRect(180, 550, 161, 31));
+        radioButton->setStyleSheet(QString::fromUtf8(""));
+        LabelNote = new QLabel(centralwidget);
+        LabelNote->setObjectName("LabelNote");
+        LabelNote->setGeometry(QRect(340, 540, 61, 51));
+        welcomelabel_2 = new QLabel(centralwidget);
+        welcomelabel_2->setObjectName("welcomelabel_2");
+        welcomelabel_2->setGeometry(QRect(110, 40, 731, 161));
+        welcomelabel_2->setTextFormat(Qt::MarkdownText);
+        welcomelabel_2->setScaledContents(false);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -89,6 +103,8 @@ public:
         buttonStats->setText(QCoreApplication::translate("MainWindow", "Statistics", nullptr));
         buttonCredits->setText(QCoreApplication::translate("MainWindow", "Credits", nullptr));
         radioButton->setText(QCoreApplication::translate("MainWindow", "Gregorian Chant", nullptr));
+        LabelNote->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
+        welcomelabel_2->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
     } // retranslateUi
 
 };

@@ -238,6 +238,7 @@ Makefile: DioceseManagement.pro ../../../QTcra/6.5.1/mingw_64/mkspecs/win32-g++/
 		../../../QTcra/6.5.1/mingw_64/lib/Qt6EntryPoint.prl \
 		../../../QTcra/6.5.1/mingw_64/mkspecs/features/build_pass.prf \
 		Pictures.qrc \
+		fonts.qrc \
 		music.qrc \
 		debug/qmake_qmake_qm_files.qrc \
 		release/qmake_qmake_qm_files.qrc
@@ -410,6 +411,7 @@ DioceseManagement.pro:
 ../../../QTcra/6.5.1/mingw_64/lib/Qt6EntryPoint.prl:
 ../../../QTcra/6.5.1/mingw_64/mkspecs/features/build_pass.prf:
 Pictures.qrc:
+fonts.qrc:
 music.qrc:
 debug/qmake_qmake_qm_files.qrc:
 release/qmake_qmake_qm_files.qrc:

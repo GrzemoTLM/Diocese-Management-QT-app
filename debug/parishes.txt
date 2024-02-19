@@ -1,0 +1,3 @@
+Parish of Marcel Lefebvre,0,1700
+Parish of Carl Stehlin,0,9200
+Parish of Simon Bubble,0,30000

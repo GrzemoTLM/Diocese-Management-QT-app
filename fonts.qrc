@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>fonts/OldLondon.ttf</file>
+        <file>fonts/Seagram tfb.ttf</file>
+    </qresource>
+</RCC>
