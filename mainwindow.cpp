@@ -20,9 +20,9 @@ MainWindow::MainWindow(QWidget *parent)
     ui->welcomelabel_2->setText("Laudetur Iesus Christus!");
     ui->welcomelabel->setStyleSheet("font-size: 48px;");
     ui->welcomelabel_2->setStyleSheet("font-size: 48px;");
-    QPixmap obrazek1(":/new/prefix1/pictrues/Piesel.jpg");
-    QPixmap obrazek2(":/new/prefix1/pictrues/note.png");
-    QPixmap background(":/new/prefix1/pictrues/back3.jpg");
+    QPixmap obrazek1("./pictrues/Piesel.jpg");
+    QPixmap obrazek2("./pictrues/note.png");
+    QPixmap background("./pictrues/back3.jpg");
     QPalette palette;
     palette.setBrush(QPalette::Window, background.scaled(this->size(), Qt::IgnoreAspectRatio));
     this->setPalette(palette);

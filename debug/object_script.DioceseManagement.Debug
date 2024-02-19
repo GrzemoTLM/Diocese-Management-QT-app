@@ -6,9 +6,9 @@ debug/tdiocese.o
 debug/tparish.o
 debug/tpriest.o
 debug/tshop.o
-debug/qrc_Pictures.o
 debug/qrc_fonts.o
 debug/qrc_music.o
+debug/qrc_textfiles.o
 debug/qrc_qmake_qmake_qm_files.o
 debug/moc_dialog.o
 debug/moc_mainwindow.o
